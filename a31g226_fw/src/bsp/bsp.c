@@ -11,6 +11,9 @@
 static volatile uint32_t systick_counter = 0;
 extern uint32_t __isr_vector_addr;
 
+extern void SystemClock_Config (void);
+
+
 static void Port_Init(void);
 
 void SysTick_Handler(void)

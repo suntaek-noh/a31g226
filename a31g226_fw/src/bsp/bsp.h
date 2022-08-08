@@ -20,6 +20,9 @@
 #include "A31G22x_hal_assert.h"
 #include "A31G22x_it.h"
 
+#include "A31G22x_hal_uartn.h"
+#include "A31G22x_hal_usart1n.h"
+
 
 void bspInit(void);
 void delay(uint32_t ms);

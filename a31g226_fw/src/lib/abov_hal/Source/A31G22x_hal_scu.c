@@ -308,8 +308,8 @@ void HAL_SCU_ClockOutput(uint8_t divval, FunctionalState endis) {
 **********************************************************************/
 Status HAL_SCU_PLL_ClockConfig(FunctionalState pllsetstate, uint8_t selbypass, uint8_t selfin,  uint8_t PREDIV, uint8_t POSTDIV1, uint8_t POSTDIV2, uint8_t OUTDIV) {
     __IO uint32_t StartUpCounter = 0;
-    __IO uint32_t status;
-    static volatile uint32_t i;
+    //__IO uint32_t status;
+    //static volatile uint32_t i;
 
     if (pllsetstate == DISABLE) {
         SCU->PLLCON = 0;
@@ -875,7 +875,7 @@ FunctionalState HAL_SCU_BootCheck(void) {
 *                    - SUCCESS
 *******************************************************************************/
 Status HAL_SCU_SetSystemClock(SYSCLK_Type clksrc, SYSCLK_DIV_Type div) {
-    volatile uint32_t Reg32;
+    //volatile uint32_t Reg32;
 
     switch(clksrc) {
         case SYSCLK_LSI:

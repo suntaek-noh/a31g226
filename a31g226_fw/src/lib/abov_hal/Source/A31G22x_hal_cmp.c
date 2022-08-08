@@ -337,7 +337,7 @@ void HAL_CMP_Start(CMP_NUMBER_Type Number) {
 * @return     None
 *******************************************************************************/
 void HAL_CMP_Stop(CMP_NUMBER_Type Number) {
-    volatile uint32_t Reg32;
+    //volatile uint32_t Reg32;
 
     if (Number == CMP_0) {
         CMP->CMP0CR &= ~CMP_CMP0CR_C0EN_Msk;

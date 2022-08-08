@@ -131,31 +131,31 @@ void I2C2_SPI20_IRQHandler(void) {
 
 }
 
-void USART10_IRQHandler(void) {
-    USART_Handler(USART10);
-}
+//void USART10_IRQHandler(void) {
+    //USART_Handler(USART10);
+//}
 
 void USART11_IRQHandler(void) {
-    USART_Handler(USART11);
+    //USART_Handler(USART11);
 }
 
 #if defined(USART12) || defined(UART13)
 void USART12_13_SPI21_IRQHandler(void) {
 #ifdef USART12
-	USART_Handler(USART12);
+	//USART_Handler(USART12);
 #endif
 #ifdef USART13
-	USART_Handler(USART13);
+	//USART_Handler(USART13);
 #endif    
 }
 #endif
 
-void UART0_IRQHandler(void) {
-    UART_Handler(UART0);
-}
+//void UART0_IRQHandler(void) {
+    //UART_Handler(UART0);
+//}
 
 void UART1_IRQHandler(void) {
-    UART_Handler(UART1);
+    //UART_Handler(UART1);
 }
 
 /* ANALOG FUNCTIONS */

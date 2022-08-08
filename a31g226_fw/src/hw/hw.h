@@ -12,6 +12,8 @@
 
 
 #include "led.h"
+#include "uart.h"
+#include "log.h"
 
 void hwInit(void);
 
