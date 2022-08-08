@@ -23,10 +23,12 @@ void SysTick_Handler(void)
 
 void bspInit(void)
 {
+
   Port_Init();
 
-  SCB->VTOR = (uint32_t)&__isr_vector_addr;
 
+  SCB->VTOR = (uint32_t)&__isr_vector_addr;
+  //SystemInit();
   /* Configure the system clock to HSE 8 MHz */
   SystemClock_Config();       //48MHz
 
@@ -34,6 +36,9 @@ void bspInit(void)
   NVIC_SetPriority (SysTick_IRQn, 1);
   // 1msec interrupt
   SysTick_Config(SystemCoreClock/1000);     //1ms interrupt
+
+  /* Enable IRQ Interrupts */
+    __enable_irq();
 }
 
 void delay(uint32_t ms)

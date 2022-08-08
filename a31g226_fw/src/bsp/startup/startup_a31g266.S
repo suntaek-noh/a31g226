@@ -58,7 +58,7 @@ LoopFillZerobss:
   bcc FillZerobss
 
 /* Call the clock system intitialization function.*/
-  //bl  SystemInit
+  bl  SystemInit
 /* Call static constructors */
   bl __libc_init_array
 /* Call the application's entry point.*/
@@ -112,7 +112,6 @@ g_pfnVectors:
   .word  0
   .word  PendSV_Handler
   .word  SysTick_Handler
-
   .word  LVI_IRQHandler                   /* Window WatchDog              */
   .word  SYSCLKFAIL_IRQHandler             /* PVD and VDDIO2 through EXTI Line detect */
   .word  WDT_IRQHandler                    /* RTC through the EXTI line    */

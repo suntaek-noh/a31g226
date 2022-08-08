@@ -14,6 +14,8 @@
 #define _DEF_FIRMWATRE_VERSION    "V220808R1"
 #define _DEF_BOARD_NAME           "A31G226ML2N"
 
+#define _USE_HW_FLASH
+
 #define _USE_HW_LED
 #define      HW_LED_MAX_CH          6
 

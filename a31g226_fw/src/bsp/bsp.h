@@ -23,6 +23,9 @@
 #include "A31G22x_hal_uartn.h"
 #include "A31G22x_hal_usart1n.h"
 
+#include "A31G22x_hal_cfmc_SelfWriteErase.h"
+#include "A31G22x_hal_cfmc.h"
+
 
 void bspInit(void);
 void delay(uint32_t ms);
