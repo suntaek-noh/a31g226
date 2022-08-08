@@ -32,9 +32,25 @@ void apMain(void)
       ledToggle(_DEF_LED5);
     }
 
+    if(buttonGetPressed(_DEF_BUTTON1) == true)
+    {
+      uartPrintf(_DEF_UART1, "pressed\n");
+    }
+    else
+    {
+      uartPrintf(_DEF_UART1, "released\n");
+    }
+
+    delay(100);
+
+#if 0
     if(uartAvailable(_DEF_UART1) > 0)
     {
       uartPrintf(_DEF_UART1, "rx : 0x%X\n", uartRead(_DEF_UART1));
     }
+#endif
+
+
+
   }
 }

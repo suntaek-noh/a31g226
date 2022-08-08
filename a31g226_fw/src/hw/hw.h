@@ -14,6 +14,7 @@
 #include "led.h"
 #include "uart.h"
 #include "log.h"
+#include "button.h"
 
 void hwInit(void);
 
