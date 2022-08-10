@@ -10,13 +10,24 @@ _Min_Stack_Size = 0x400; /* required amount of stack */
 /* Memories definition */
 MEMORY
 {
+  TAG    (RX)     : ORIGIN = 0x00008000,   LENGTH = 1K	
+  FLASH    (rx)   : ORIGIN = 0x00008400,   LENGTH = 223K
   RAM    (xrw)    : ORIGIN = 0x20000000,   LENGTH = 20K
-  FLASH    (rx)   : ORIGIN = 0x00000000,   LENGTH = 256K
+  
 }
 
 /* Sections */
 SECTIONS
 {
+   .tag :
+  {
+    . = ALIGN(4);
+    _flash_tag_addr = .;
+    KEEP(*(.tag)) 
+    . = ALIGN(4);
+  } >TAG
+
+
   /* The startup code into "FLASH" Rom type memory */
   .isr_vector :
   {
@@ -25,6 +36,13 @@ SECTIONS
     KEEP(*(.isr_vector)) /* Startup code */
     . = ALIGN(4);
   } >FLASH
+  
+  .version :
+  {
+    . = ALIGN(1024);
+    KEEP(*(.version)) 
+    . = ALIGN(4);
+  } >FLASH	
 
   /* The program code and other data into "FLASH" Rom type memory */
   .text :
