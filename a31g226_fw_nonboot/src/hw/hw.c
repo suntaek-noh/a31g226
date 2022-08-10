@@ -21,6 +21,8 @@ void hwInit(void)
 {
   bspInit();
 
+  cliInit();
+  gpioInit();
   logInit();
   ledInit();
   buttonInit();
@@ -31,6 +33,12 @@ void hwInit(void)
   logPrintf("[ Firmware Begin... ]\r\n");
   logPrintf("Booting..Name \t\t: %s\r\n", _DEF_BOARD_NAME);
   logPrintf("Booting..Ver  \t\t: %s\r\n", _DEF_FIRMWATRE_VERSION);
+
+  logPrintf("SystemCoreClock\t\t: %dMhz\r\n", SystemCoreClock/1000000);
+  logPrintf("SystemPeriClock\t\t: %dMhz\r\n", SystemPeriClock/1000000);
+
+  buzzerInit();
+  pwmInit();
 
   flashInit();
 }

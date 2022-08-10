@@ -16,6 +16,11 @@
 #include "log.h"
 #include "button.h"
 #include "flash.h"
+#include "buzzer.h"
+#include "cli.h"
+#include "pwm.h"
+#include "gpio.h"
+
 
 void hwInit(void);
 

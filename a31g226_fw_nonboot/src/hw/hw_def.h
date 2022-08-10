@@ -14,7 +14,11 @@
 #define _DEF_FIRMWATRE_VERSION    "V220808R1"
 #define _DEF_BOARD_NAME           "A31G226ML2N"
 
+#define _USE_HW_BUZZER
 #define _USE_HW_FLASH
+
+#define _USE_HW_GPIO
+#define      HW_GPIO_MAX_CH         8
 
 #define _USE_HW_LED
 #define      HW_LED_MAX_CH          6
@@ -29,6 +33,12 @@
 #define      HW_BUTTON_MAX_CH       1
 #define      HW_BUTTON_OBJ_USE      0
 
+#define _USE_HW_CLI
+#define      HW_CLI_CMD_LIST_MAX    16
+#define      HW_CLI_CMD_NAME_MAX    16
+#define      HW_CLI_LINE_HIS_MAX    4
+#define      HW_CLI_LINE_BUF_MAX    64
+
 
 #define FLASH_ADDR_TAG              0x0008000
 #define FLASH_ADDR_FW               0x0008400
@@ -37,6 +47,7 @@
 #define FLASH_ADDR_START            0x0008000
 #define FLASH_ADDR_END              (FLASH_ADDR_START + (256-32)*1024)
 
-
+#define _USE_HW_PWM
+#define      HW_PWM_MAX_CH          3
 
 #endif /* SRC_HW_HW_DEF_H_ */

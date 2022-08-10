@@ -30,9 +30,9 @@ typedef struct
   uint32_t        baud;
   UartHwType_t    type;
 
-
   uint8_t         rx_buf[UART_RX_BUF_LENGTH];
   qbuffer_t       qbuffer;
+
   UART_Type       *p_huart;
   USART_Type      *p_husart;
   UART_CFG_Type   uart_init;

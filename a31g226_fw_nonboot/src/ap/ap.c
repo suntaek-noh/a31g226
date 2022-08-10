@@ -11,7 +11,7 @@
 
 void apInit(void)
 {
-
+  cliOpen(_DEF_UART1, 115200);
 }
 
 void apMain(void)
@@ -32,14 +32,7 @@ void apMain(void)
       ledToggle(_DEF_LED5);
     }
 
-    if(uartAvailable(_DEF_UART1) > 0)
-    {
-      uint8_t rx_data;
-
-      rx_data = uartRead(_DEF_UART1);
-
-      logPrintf("rx_data : 0x%X\n", rx_data);
-    }
+   cliMain();
 
 #if 0
     if(uartAvailable(_DEF_UART1) > 0)

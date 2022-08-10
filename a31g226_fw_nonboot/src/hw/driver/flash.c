@@ -188,7 +188,7 @@ void cliFlash(cli_args_t *args)
   {
     for(int i=0; i<FLASH_SECTOR_MAX; i++)
     {
-      cliPrintf("Sector num : %d - 0x%X : %dKB\n", i, flash_tbl[i].addr, flash_tbl[i].length/1024);
+      cliPrintf("Sector num : %d - 0x%X : %dKB\n", i, FLASH_SECTOR_ADDR + i*FLASH_SECTOR_SIZE, FLASH_SECTOR_SIZE);
     }
 
     ret = true;
