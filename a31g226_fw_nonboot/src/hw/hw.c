@@ -39,6 +39,9 @@ void hwInit(void)
 
   buzzerInit();
   pwmInit();
+  irRemoteInit();
+
+
 
   flashInit();
 }

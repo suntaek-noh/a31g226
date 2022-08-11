@@ -39,7 +39,7 @@ bool pwmInit(void)
   TIMER1n_CFG_Type TIMER1n_Config;
   TIMER2n_CFG_Type TIMER2n_Config;
 
-  prescaler = (uint32_t)((SystemCoreClock /1) / (4000 * 250)) - 1;
+  prescaler = (uint32_t)((SystemCoreClock /1) / (4000 * 250)) - 1;        //48-1Mhz
 
   HAL_SCU_Timer1n_ClockConfig(T1NCLK_PCLK);
 
@@ -52,7 +52,7 @@ bool pwmInit(void)
 
   TIMER1n_Config.PrescalerData = prescaler;                 //
 
-  TIMER1n_Config.AData = 250;                     //주파수
+  TIMER1n_Config.AData = 250;                     //주파수 - 4Khz
   TIMER1n_Config.BData = 0;                     // 두티 high
 
   HAL_TIMER1n_Stop(TIMER16);
@@ -80,9 +80,9 @@ bool pwmInit(void)
   TIMER2n_Config.AData = 250;                     //주파수
   TIMER2n_Config.BData = 0;                     // 두티 high
 
-  HAL_GPIO_ConfigOutput(PC, 0, PCU_MODE_ALT_FUNC);
+  HAL_GPIO_ConfigOutput  (PC, 0, PCU_MODE_ALT_FUNC);
   HAL_GPIO_ConfigFunction(PC, 0, PCU_ALT_FUNCTION_1);
-  HAL_GPIO_ConfigOutput(PC, 1, PCU_MODE_ALT_FUNC);
+  HAL_GPIO_ConfigOutput  (PC, 1, PCU_MODE_ALT_FUNC);
   HAL_GPIO_ConfigFunction(PC, 1, PCU_ALT_FUNCTION_1);
 
   HAL_TIMER2n_Init(TIMER20, &TIMER2n_Config);

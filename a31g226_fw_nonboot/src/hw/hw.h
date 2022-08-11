@@ -20,6 +20,7 @@
 #include "cli.h"
 #include "pwm.h"
 #include "gpio.h"
+#include "ir_remote.h"
 
 
 void hwInit(void);

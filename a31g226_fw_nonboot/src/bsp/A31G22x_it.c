@@ -90,10 +90,6 @@ void TIMER14_IRQHandler(void) {
 
 }
 
-void TIMER15_IRQHandler(void) {
-
-}
-
 void TIMER16_IRQHandler(void) {
 
 }
