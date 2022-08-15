@@ -24,7 +24,7 @@ void hwInit(void)
   cliInit();
   gpioInit();
   logInit();
-  ledInit();
+  //ledInit();
   buttonInit();
   uartInit();
 
@@ -41,7 +41,8 @@ void hwInit(void)
   pwmInit();
   irRemoteInit();
 
-
-
   flashInit();
+  dataFlashInit();
+
+  lcdInit();
 }

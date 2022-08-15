@@ -126,11 +126,48 @@ void cliLed(cli_args_t *args)
     ret = true;
   }
 
+  if (args->argc == 1 && args->isStr(0, "kit") == true)
+  {
+    uint32_t pre_time;
+
+    uint8_t led_st  = 0;
+    int8_t led_pos = 0;
+    int8_t led_dir = 1;
+
+    pre_time = millis();
+    while(cliKeepLoop())
+    {
+      if(millis() - pre_time >= 10)
+      {
+        pre_time = millis();
+
+        if(led_st == 0)
+          ledOn(led_pos);
+        else
+          ledOff(led_pos);
+
+        if(led_st %2 == 1)
+        {
+          led_pos += led_dir;//(led_pos+1) % LED_MAX_CH;
+          if(led_pos >= LED_MAX_CH || led_pos < 0)
+          {
+            led_dir *= -1;
+            led_pos  += led_dir;
+          }
+        }
+        led_st++;
+        led_st %= 2;
+      }
+    }
+
+    ret = true;
+  }
 
 
   if (ret != true)
   {
     cliPrintf("led toggle ch[1~%d] time(ms)\n", LED_MAX_CH);
+    cliPrintf("led kit\n");
   }
 }
 #endif

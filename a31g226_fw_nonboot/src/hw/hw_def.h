@@ -16,11 +16,12 @@
 
 #define _USE_HW_BUZZER
 #define _USE_HW_FLASH
+#define _USE_HW_DATA_FLASH
 #define _USE_HW_IR_REMOTE
 
 
 #define _USE_HW_GPIO
-#define      HW_GPIO_MAX_CH         9
+#define      HW_GPIO_MAX_CH         10
 
 #define _USE_HW_LED
 #define      HW_LED_MAX_CH          6
@@ -51,5 +52,9 @@
 
 #define _USE_HW_PWM
 #define      HW_PWM_MAX_CH          3
+
+#define _USE_HW_SEG_LCD
+#define      HW_LCD_SEG_MAX_CH          11
+#define      HW_LCD_COM_MAX_CH          4
 
 #endif /* SRC_HW_HW_DEF_H_ */

@@ -16,20 +16,39 @@ void apInit(void)
 
 void apMain(void)
 {
+  uint8_t tog =0;
   uint32_t pre_time;
 
   pre_time = millis();
 
   while(1)
   {
-    if(millis() - pre_time >= 500)
+    if(millis() - pre_time >= 1000)
     {
       pre_time = millis();
-      ledToggle(_DEF_LED1);
-      ledToggle(_DEF_LED2);
-      ledToggle(_DEF_LED3);
-      ledToggle(_DEF_LED4);
-      ledToggle(_DEF_LED5);
+
+      //lcdAllDisp();
+
+#if 0
+      if(tog == 0)
+      {
+        logPrintf("tog 0\n");
+        lcdClearBuffer();
+        tog = 1;
+      }
+      else if(tog == 1)
+      {
+        logPrintf("tog 1\n");
+        lcdAllDisp();
+        tog = 0;
+      }
+#endif
+
+      //ledToggle(_DEF_LED1);
+      //ledToggle(_DEF_LED2);
+      //ledToggle(_DEF_LED3);
+      //ledToggle(_DEF_LED4);
+      //ledToggle(_DEF_LED5);
     }
 
    cliMain();

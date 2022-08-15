@@ -202,7 +202,10 @@ void cliPwm(cli_args_t *args)
 
     if(args->isStr(0, "set"))
     {
-      pwmWrite(ch, pwm);
+      pwm = constrain(pwm, 0, 100);
+      pwmWrite(0, CMAP(pwm, 0, 100, 0, 250));   // value 0~100%
+
+      //pwmWrite(ch, pwm);
       cliPrintf("pwm ch%d %d\n", ch, pwm);
     }
     else
@@ -231,7 +234,7 @@ void cliPwm(cli_args_t *args)
 
   if (ret == false)
   {
-    cliPrintf( "pwm set 0~%d 0~250 \n", PWM_MAX_CH-1);
+    cliPrintf( "pwm set 0~%d 0~100%%\n", PWM_MAX_CH-1);
     cliPrintf( "pwm get 0~%d \n", PWM_MAX_CH-1);
   }
 

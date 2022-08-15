@@ -26,18 +26,18 @@ typedef struct
 
 gpio_tbl_t gpio_tbl[GPIO_MAX_CH] =
     {
-        {(PORT_Type *)PF, 4,  _DEF_OUTPUT,_DEF_HIGH, _DEF_LOW, _DEF_HIGH},
-        {(PORT_Type *)PF, 5,  _DEF_OUTPUT,_DEF_HIGH, _DEF_LOW, _DEF_HIGH},
-        {(PORT_Type *)PF, 6,  _DEF_OUTPUT,_DEF_HIGH, _DEF_LOW, _DEF_HIGH},
-        {(PORT_Type *)PF, 7,  _DEF_OUTPUT,_DEF_HIGH, _DEF_LOW, _DEF_HIGH},
+        {(PORT_Type *)PF, 4,  _DEF_OUTPUT,_DEF_HIGH, _DEF_LOW, _DEF_HIGH},      //0
+        {(PORT_Type *)PF, 5,  _DEF_OUTPUT,_DEF_HIGH, _DEF_LOW, _DEF_HIGH},      //1
+        {(PORT_Type *)PF, 6,  _DEF_OUTPUT,_DEF_HIGH, _DEF_LOW, _DEF_HIGH},      //2
+        {(PORT_Type *)PF, 7,  _DEF_OUTPUT,_DEF_HIGH, _DEF_LOW, _DEF_HIGH},      //3
 
-        {             PA, 11, _DEF_OUTPUT,_DEF_HIGH, _DEF_LOW, _DEF_HIGH},
-        {             PA, 10, _DEF_OUTPUT,_DEF_HIGH, _DEF_LOW, _DEF_HIGH},
-        {             PA, 9,  _DEF_OUTPUT,_DEF_HIGH, _DEF_LOW, _DEF_HIGH},
-        {             PA, 8,  _DEF_OUTPUT,_DEF_HIGH, _DEF_LOW, _DEF_HIGH},
+        {             PA, 11, _DEF_OUTPUT,_DEF_HIGH, _DEF_LOW, _DEF_HIGH},      //4
+        {             PA, 10, _DEF_OUTPUT,_DEF_HIGH, _DEF_LOW, _DEF_HIGH},      //5
+        {             PA, 9,  _DEF_OUTPUT,_DEF_HIGH, _DEF_LOW, _DEF_HIGH},      //6
+        {             PA, 8,  _DEF_OUTPUT,_DEF_HIGH, _DEF_LOW, _DEF_HIGH},      //7
 
-        {             PC, 1,  _DEF_INPUT, _DEF_LOW,  _DEF_HIGH, _DEF_HIGH},
-
+        {             PC, 1,  _DEF_INPUT, _DEF_LOW,  _DEF_HIGH, _DEF_HIGH},     //8     sw
+        {             PB, 10, _DEF_OUTPUT,_DEF_HIGH, _DEF_LOW,  _DEF_LOW},      //9     backligh
 
     };
 

@@ -27,6 +27,10 @@
 #include "A31G22x_hal_cfmc.h"
 #include "A31G22x_hal_timer1n.h"
 #include "A31G22x_hal_timer2n.h"
+#include "A31G22x_hal_lcd.h"
+#include "A31G22x_hal_dfmc.h"
+
+
 
 void bspInit(void);
 void delay(uint32_t ms);

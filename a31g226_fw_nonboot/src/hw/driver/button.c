@@ -33,8 +33,6 @@ bool buttonInit(void)
 {
   bool ret = true;
 
-
-
   for(int i=0; i<BUTTON_MAX_CH; i++)
   {
     HAL_GPIO_ConfigOutput(button_tbl[i].port, button_tbl[i].pin, PCU_MODE_INPUT);      // PE2 to PE7 GPIO Output

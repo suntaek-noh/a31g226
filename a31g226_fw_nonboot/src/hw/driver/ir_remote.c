@@ -34,6 +34,7 @@ typedef struct
 
 typedef struct
 {
+
   IrRemoteBitValue_t value;
   uint16_t on_time;
   uint16_t on_error;

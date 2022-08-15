@@ -1,47 +1,43 @@
 /*
- * flash.c
+ * data_flash.c
  *
- *  Created on: 2022. 8. 8.
+ *  Created on: 2022. 8. 15.
  *      Author: sunta
  */
 
 
 
-#include "flash.h"
+#include "data_flash.h"
 #include "cli.h"
 
 
-#ifdef _USE_HW_FLASH
+#ifdef _USE_HW_DATA_FLASH
 
-#define FLASH_SECTOR_ADDR   0x00000000      //flash의 시작 주소
-#define FLASH_SECTOR_MAX    256
-#define FLASH_SECTOR_SIZE   1024
-
-#define DATA_SECTOR_ADDR    0x0E000000      //data의 시작 주소
-#define DATA_SECTOR_MAX     64
-#define DATA_SECTOR_SIZE    512
+#define DATA_FLASH_SECTOR_ADDR    0x0E000000      //data의 시작 주소
+#define DATA_FLASH_SECTOR_MAX     64
+#define DATA_FLASH_SECTOR_SIZE    512
 
 
-static bool flashInSector(uint16_t sector_num, uint32_t addr, uint32_t length);
-static void flashUnlock(void);
-static void flashLock(void);
+static bool dataFlashInSector(uint16_t sector_num, uint32_t addr, uint32_t length);
+//static void dataFlashUnlock(void);
+//static void dataFlashLock(void);
 
 #ifdef _USE_HW_CLI
-static void cliFlash(cli_args_t *args);
+static void cliDataFlash(cli_args_t *args);
 #endif
 
-bool flashInit(void)
+bool dataFlashInit(void)
 {
   bool ret = true;
 
   #ifdef _USE_HW_CLI
-  cliAdd("flash", cliFlash);
+  cliAdd("data_flash", cliDataFlash);
   #endif
 
   return ret;
 }
 
-bool flashErase(uint32_t addr, uint32_t length)
+bool dataFlashErase(uint32_t addr, uint32_t length)
 {
   bool ret = false;
   int status;
@@ -50,9 +46,9 @@ bool flashErase(uint32_t addr, uint32_t length)
   uint32_t sector_count = 0;
 
 
-  for(int i=0; i<FLASH_SECTOR_MAX; i++)
+  for(int i=0; i<DATA_FLASH_SECTOR_MAX; i++)
   {
-    if(flashInSector(i, addr, length) == true)
+    if(dataFlashInSector(i, DATA_FLASH_SECTOR_ADDR+addr, length) == true)
     {
       if(start_sector_num < 0)
       {
@@ -64,49 +60,40 @@ bool flashErase(uint32_t addr, uint32_t length)
 
   if(sector_count > 0)
   {
-    flashUnlock();
+    //dataFlashUnlock();
 
     for(int i=0; i<sector_count; i++)
     {
-      status = HAL_CFMC_SelfErase (((start_sector_num+i) * FLASH_SECTOR_SIZE) , FLASH_SECTOR_SIZE);
+      //status = HAL_CFMC_SelfErase (((start_sector_num+i) * DATA_FLASH_SECTOR_SIZE) , DATA_FLASH_SECTOR_SIZE);
+      status = HAL_DFMC_EraseSector(0, DATA_FLASH_SECTOR_ADDR +((start_sector_num+i) * DATA_FLASH_SECTOR_SIZE));
     }
 
-
-    if(status == HAL_OK)
+    if(!status)
     {
       ret = true;
     }
 
-    flashLock();
+    //dataFlashLock();
   }
 
   logPrintf("start_sector_num : %d, sector_count : %ld\n",start_sector_num, sector_count);
   return ret;
 }
 
-bool flashWrite(uint32_t addr, uint8_t *p_data, uint32_t length)
+bool dataFlashWrite(uint32_t addr, uint8_t *p_data, uint32_t length)
 {
   bool ret = true;
   int status;
 
-#if 0
-  if(addr%4 != 0)   // 4byte로 얼라인된 주소일때만 가능하도록
+  //dataFlashUnlock();
+
+  for(int i=0; i<length; i++)
   {
-    return false;
-  }
-#endif
+    uint8_t data;
 
-  flashUnlock();
+    data = p_data[i];
 
-  for(int i=0; i<length; i+=1)
-  {
-    //uint32_t data;
-    //data = p_data[i+0] << 0;   // p_data[i] == *(p_data+i);
-    //data |= p_data[i+1] << 8;
-    //data |= p_data[i+2] << 16;
-    //data |= p_data[i+3] << 24;
-
-    status = HAL_CFMC_SelfWrite (addr + i, FLASH_SECTOR_SIZE, p_data);
+    status = HAL_DFMC_ByteProgram (DATA_OPTION_NOT_USE, DATA_FLASH_SECTOR_ADDR+(addr+i), 1, &data);
 
     if(status != HAL_OK)
     {
@@ -115,15 +102,15 @@ bool flashWrite(uint32_t addr, uint8_t *p_data, uint32_t length)
     }
   }
 
-  flashLock();
+  //dataFlashLock();
   return ret;
 }
 
-bool flashRead(uint32_t addr, uint8_t *p_data, uint32_t length)
+bool dataFlashRead(uint32_t addr, uint8_t *p_data, uint32_t length)
 {
   bool ret = true;
 
-  uint8_t *p_byte = (uint8_t *)addr;      // 받은 addr은 정수값이므로 포인터에 대입하기 위해 타입전환을 했음 주소로값으로
+  uint8_t *p_byte = (uint8_t *)(DATA_FLASH_SECTOR_ADDR+addr);      // 받은 addr은 정수값이므로 포인터에 대입하기 위해 타입전환을 했음 주소로값으로
 
   for(int i=0; i<length; i++)
   {
@@ -133,7 +120,7 @@ bool flashRead(uint32_t addr, uint8_t *p_data, uint32_t length)
   return ret;
 }
 
-bool flashInSector(uint16_t sector_num, uint32_t addr, uint32_t length)
+bool dataFlashInSector(uint16_t sector_num, uint32_t addr, uint32_t length)
 {
   bool ret = false;
 
@@ -142,8 +129,8 @@ bool flashInSector(uint16_t sector_num, uint32_t addr, uint32_t length)
   uint32_t flash_start;
   uint32_t flash_end;
 
-  sector_start  = FLASH_SECTOR_ADDR + (sector_num * FLASH_SECTOR_SIZE);
-  sector_end    = sector_start + FLASH_SECTOR_SIZE -1;
+  sector_start  = DATA_FLASH_SECTOR_ADDR + (sector_num * DATA_FLASH_SECTOR_SIZE);
+  sector_end    = sector_start + DATA_FLASH_SECTOR_SIZE -1;
   flash_start   = addr;
   flash_end     = addr + length -1;
 
@@ -170,26 +157,28 @@ bool flashInSector(uint16_t sector_num, uint32_t addr, uint32_t length)
   return ret;
 }
 
-void flashUnlock(void)
+#if 0
+void dataFlashUnlock(void)
 {
-  HAL_CFMC_FLASH_ALL_ENABLE();
+  //HAL_CFMC_FLASH_ALL_ENABLE();
 }
 
-void flashLock(void)
+void dataFlashLock(void)
 {
 
 }
+#endif
 
 #ifdef _USE_HW_CLI
-void cliFlash(cli_args_t *args)
+void cliDataFlash(cli_args_t *args)
 {
   bool ret = false;
 
   if(args->argc == 1 && args->isStr(0,"info") == true)
   {
-    for(int i=0; i<FLASH_SECTOR_MAX; i++)
+    for(int i=0; i<DATA_FLASH_SECTOR_MAX; i++)
     {
-      cliPrintf("Sector num : %d - 0x%X : %dKB\n", i, FLASH_SECTOR_ADDR + i*FLASH_SECTOR_SIZE, FLASH_SECTOR_SIZE);
+      cliPrintf("Sector num : %d - 0x%X : %dKB\n", i, DATA_FLASH_SECTOR_ADDR + i*DATA_FLASH_SECTOR_SIZE, DATA_FLASH_SECTOR_SIZE);
     }
 
     ret = true;
@@ -205,7 +194,7 @@ void cliFlash(cli_args_t *args)
 
     for(int i=0; i<length; i++)
     {
-      cliPrintf("0x%X : 0x%X\n", addr+i, *((uint8_t *)(addr+i)));     //
+      cliPrintf("0x%X : 0x%X\n", DATA_FLASH_SECTOR_ADDR+addr+i, *((uint8_t *)(DATA_FLASH_SECTOR_ADDR+addr+i)));     //
     }
 
     ret = true;
@@ -219,7 +208,7 @@ void cliFlash(cli_args_t *args)
     addr = (uint32_t)args->getData(1);
     length = (uint32_t)args->getData(2);
 
-    if(flashErase(addr, length) == true)
+    if(dataFlashErase(addr, length) == true)
     {
       cliPrintf("Erase OK\n");
     }
@@ -234,12 +223,12 @@ void cliFlash(cli_args_t *args)
   if(args->argc == 3 && args->isStr(0, "write") == true)
   {
     uint32_t addr;
-    uint32_t data;
+    uint8_t data;
 
     addr = (uint32_t)args->getData(1);
     data = (uint32_t)args->getData(2);
 
-    if(flashWrite(addr, (uint8_t *)&data, 4) == true)
+    if(dataFlashWrite(addr, &data, 1) == true)
     {
       cliPrintf("Write OK\n");
     }
@@ -262,7 +251,7 @@ void cliFlash(cli_args_t *args)
 
     for(int i=0; i<length; i+=4)
     {
-      flashWrite(addr+i, (uint8_t *)&data, 4);
+      dataFlashWrite(addr+i, (uint8_t *)&data, 4);
     }
     cliPrintf("Write OK\n");
 
@@ -282,11 +271,13 @@ void cliFlash(cli_args_t *args)
 
   if(ret != true)
   {
-    cliPrintf("flash info\n");
-    cliPrintf("flash read addr length\n");
-    cliPrintf("flash erase addr length\n");
-    cliPrintf("flash write addr data\n");
-    cliPrintf("flash write2 addr length\n");
+    cliPrintf("[data_flash 0x0E000000 ~ 0x0E007FFF]\n");
+
+    cliPrintf("data_flash info\n");
+    cliPrintf("data_flash read addr length\n");
+    cliPrintf("data_flash erase addr length\n");
+    cliPrintf("data_flash write addr data\n");
+    cliPrintf("data_flash write2 addr length\n");
 
   }
 
@@ -296,3 +287,4 @@ void cliFlash(cli_args_t *args)
 
 
 #endif
+
