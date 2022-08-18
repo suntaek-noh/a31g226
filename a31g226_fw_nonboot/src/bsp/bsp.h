@@ -29,6 +29,8 @@
 #include "A31G22x_hal_timer2n.h"
 #include "A31G22x_hal_lcd.h"
 #include "A31G22x_hal_dfmc.h"
+#include "A31G22x_hal_i2c.h"
+
 
 
 

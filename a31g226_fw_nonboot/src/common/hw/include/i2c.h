@@ -12,7 +12,6 @@
 #include "hw_def.h"
 
 #ifdef _USE_HW_I2C
-
 #define I2C_MAX_CH       HW_I2C_MAX_CH
 
 

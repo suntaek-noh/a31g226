@@ -19,15 +19,19 @@
 #define _USE_HW_DATA_FLASH
 #define _USE_HW_IR_REMOTE
 
-
 #define _USE_HW_GPIO
-#define      HW_GPIO_MAX_CH         10
+#define      HW_GPIO_MAX_CH         10//25
 
 #define _USE_HW_LED
 #define      HW_LED_MAX_CH          6
 
 #define _USE_HW_UART
 #define      HW_UART_MAX_CH         2
+
+#define _USE_HW_I2C
+#define      HW_I2C_MAX_CH          1
+
+
 
 #define _USE_HW_LOG
 #define      HW_LOG_CH              _DEF_UART1
@@ -56,5 +60,16 @@
 #define _USE_HW_SEG_LCD
 #define      HW_LCD_SEG_MAX_CH          11
 #define      HW_LCD_COM_MAX_CH          4
+
+
+//#define _USE_HW_GT216L
+
+
+
+
+
+
+
+
 
 #endif /* SRC_HW_HW_DEF_H_ */

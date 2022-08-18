@@ -39,6 +39,38 @@ gpio_tbl_t gpio_tbl[GPIO_MAX_CH] =
         {             PC, 1,  _DEF_INPUT, _DEF_LOW,  _DEF_HIGH, _DEF_HIGH},     //8     sw
         {             PB, 10, _DEF_OUTPUT,_DEF_HIGH, _DEF_LOW,  _DEF_LOW},      //9     backligh
 
+
+#if 0
+        {             PE, 0, _DEF_OUTPUT,_DEF_HIGH, _DEF_LOW,  _DEF_LOW},       //10     com0
+        {             PE, 1, _DEF_OUTPUT,_DEF_HIGH, _DEF_LOW,  _DEF_LOW},       //11     com1
+        {             PE, 2, _DEF_OUTPUT,_DEF_HIGH, _DEF_LOW,  _DEF_LOW},       //12     com2
+        {             PE, 3, _DEF_OUTPUT,_DEF_HIGH, _DEF_LOW,  _DEF_LOW},       //13     com3
+
+        {             PE, 4, _DEF_OUTPUT,_DEF_HIGH, _DEF_LOW,  _DEF_HIGH},       //14     seg1
+        {             PE, 5, _DEF_OUTPUT,_DEF_HIGH, _DEF_LOW,  _DEF_HIGH},       //15     seg2
+        {             PE, 6, _DEF_OUTPUT,_DEF_HIGH, _DEF_LOW,  _DEF_HIGH},       //16     seg3
+        {             PE, 7, _DEF_OUTPUT,_DEF_HIGH, _DEF_LOW,  _DEF_HIGH},       //17     seg4
+
+        {             PC, 11, _DEF_OUTPUT,_DEF_HIGH, _DEF_LOW,  _DEF_HIGH},       //18     seg5
+
+        {             PC, 6, _DEF_OUTPUT,_DEF_HIGH, _DEF_LOW,  _DEF_HIGH},       //19     seg5
+        {             PC, 5, _DEF_OUTPUT,_DEF_HIGH, _DEF_LOW,  _DEF_HIGH},       //20     seg5
+        {             PC, 4, _DEF_OUTPUT,_DEF_HIGH, _DEF_LOW,  _DEF_HIGH},       //21     seg5
+        {             PC, 3, _DEF_OUTPUT,_DEF_HIGH, _DEF_LOW,  _DEF_HIGH},       //22     seg5
+        {             PC, 2, _DEF_OUTPUT,_DEF_HIGH, _DEF_LOW,  _DEF_HIGH},       //23     seg5
+
+        {             PB, 9, _DEF_OUTPUT,_DEF_HIGH, _DEF_LOW,  _DEF_HIGH},       //24     seg5
+#endif
+
+
+
+
+
+
+
+
+
+
     };
 
 #ifdef _USE_HW_CLI

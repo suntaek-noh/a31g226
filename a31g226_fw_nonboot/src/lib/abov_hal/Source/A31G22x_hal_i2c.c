@@ -421,6 +421,7 @@ Status HAL_I2C_MasterTransferData(I2C_Type* I2Cx, I2C_M_SETUP_Type *TransferCfg,
 
     while (I2Cx->ST & 0x04) {}    // busy check //
 
+
     if (Opt == I2C_TRANSFER_POLLING) {
         /* First Start condition -------------------------------------------------------------- */
         // Reset I2C setup value to default state
@@ -428,6 +429,7 @@ Status HAL_I2C_MasterTransferData(I2C_Type* I2Cx, I2C_M_SETUP_Type *TransferCfg,
         TransferCfg->rx_count = 0;
 
         if (TransferCfg->tx_count < TransferCfg->tx_length) {
+
             I2Cx->DR = (TransferCfg->sl_addr7bit << 1); //write
 
             // Start command
@@ -447,7 +449,7 @@ Status HAL_I2C_MasterTransferData(I2C_Type* I2Cx, I2C_M_SETUP_Type *TransferCfg,
 
             exitflag = 1;
             while (exitflag) {
-                if (TransferCfg->tx_count < TransferCfg->tx_length) {
+              if (TransferCfg->tx_count < TransferCfg->tx_length) {
                     I2Cx->DR = TransferCfg->tx_data[TransferCfg->tx_count];
                     TransferCfg->tx_count++;
                     Ret = HAL_I2C_MWait(I2Cx);

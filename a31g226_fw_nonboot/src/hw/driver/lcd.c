@@ -63,10 +63,17 @@ lcd_t lcd_com_tbl[LCD_COM_MAX_CH] =
 
 lcd_t lcd_seg_tbl[LCD_SEG_MAX_CH] =
     {
+
+#if 0
         {PE, 4, "SEG1", 1},
         {PE, 5, "SEG2", 2},
         {PE, 6, "SEG3", 3},
         {PE, 7, "SEG4", 4},
+#endif
+        {PD, 5, "SEG1", 7},
+        {PD, 1, "SEG2", 11},
+        {PD, 0, "SEG3", 12},
+        {PA, 6, "SEG4", 43},
 
         {PC, 11, "SEG5", 14},
         {PC, 6,  "SEG6", 19},
@@ -96,20 +103,23 @@ bool lcdInit(void)
 {
   bool ret = true;
 
-  backlight_value = 10;
+  backlight_value = 0;
 
   HAL_LCD_Module(ENABLE);
   HAL_SCU_LCD_ClockConfig(LCDCLK_MCCR5);          //LCDCLK_MCCR5
-  HAL_SCU_MiscClockConfig(5, LCD_TYPE, CLKSRC_PLL, 5);
+  HAL_SCU_MiscClockConfig(5, LCD_TYPE, CLKSRC_HSE, 8);
 
   HAL_LCD_Display(DISABLE);
 
+#if 1
   for(int i=0; i<LCD_COM_MAX_CH; i++)
   {
     HAL_GPIO_ConfigOutput(lcd_com_tbl[i].port, lcd_com_tbl[i].pin, PCU_MODE_ALT_FUNC);        //
     HAL_GPIO_ConfigFunction(lcd_com_tbl[i].port, lcd_com_tbl[i].pin, PCU_ALT_FUNCTION_0);       //
     //HAL_GPIO_ConfigPullup(lcd_com_tbl[i].port, lcd_com_tbl[i].pin, PCU_PUPD_PULL_UP);
   }
+#endif
+
 
   for(int i=0; i<LCD_SEG_MAX_CH; i++)
   {
@@ -122,16 +132,31 @@ bool lcdInit(void)
 
     DATA_BUFFER[i] = (uint8_t *)(LCD_DR_OFFSET_ADDR+lcd_seg_tbl[i].seg_num);
 
-    //logPrintf("DATA_BUFFER[%d] : 0x%x\r\n", i, DATA_BUFFER[i]);
+    logPrintf("DATA_BUFFER[%d] : 0x%x\r\n", i, DATA_BUFFER[i]);
 
   }
 
-  lcdConfig.InternalBiasResistor    = RLCD2_66_66_50;
+  HAL_GPIO_ConfigOutput(PE, 8, PCU_MODE_ALT_FUNC);        //
+  HAL_GPIO_ConfigFunction(PE, 8, PCU_ALT_FUNCTION_0);       //
+
+  HAL_GPIO_ConfigOutput(PE, 9, PCU_MODE_ALT_FUNC);        //
+  HAL_GPIO_ConfigFunction(PE, 9, PCU_ALT_FUNCTION_0);       //
+
+  HAL_GPIO_ConfigOutput(PE, 10, PCU_MODE_ALT_FUNC);        //
+  HAL_GPIO_ConfigFunction(PE, 10, PCU_ALT_FUNCTION_0);       //
+
+  HAL_GPIO_ConfigOutput(PE, 11, PCU_MODE_ALT_FUNC);        //
+  HAL_GPIO_ConfigFunction(PE, 11, PCU_ALT_FUNCTION_0);       //
+
+
+
+
+  lcdConfig.InternalBiasResistor    = RLCD4_320_320_240;
   lcdConfig.LcdDutyandBias          = DUTY1_4_BIAS1_3;
   lcdConfig.LcdClock                = LCDCLK_128Hz;
   lcdConfig.LcdAutoBias             = DISABLE;
-  lcdConfig.BiasModeClk             = fLCD_2CLK;
-  lcdConfig.LcdExtBias              = DISABLE;           // ENABLE: External Bias, DISABLE: Internal Bias
+  lcdConfig.BiasModeClk             = fLCD_4CLK;
+  lcdConfig.LcdExtBias              = DISABLE;            // ENABLE: External Bias, DISABLE: Internal Bias
   lcdConfig.LcdContrast             = ENABLE;            // User for Internal Bias Only
   lcdConfig.VlcVoltage              = VDD16_16_STEP;     // When VDD = 5.0V and LCD Contrast Enabled, VLC0 = (5.0 V * (16 / 25)) = 3.2 V
 
@@ -155,6 +180,7 @@ bool lcdInit(void)
     HAL_LCD_SetVLC(LCD_VLC2, DISABLE);
     HAL_LCD_SetVLC(LCD_VLC3, DISABLE);
   }
+
 
   HAL_LCD_Configuration(&lcdConfig);                      // update LCD Setting
   HAL_LCD_Display(ENABLE);
@@ -219,7 +245,7 @@ void lcdWrite(uint8_t index, uint8_t data)
 
 void lcdClearBuffer(void)
 {
-  for (int i=0; i<LCD_SEG_MAX_CH ; i++)
+  for (int i=0; i<LCD_SEG_MAX_CH; i++)
   {
     lcdWrite(i, 0x00);
   }
@@ -227,9 +253,9 @@ void lcdClearBuffer(void)
 
 void lcdAllDisp(void)
 {
-  for (int i=0; i<LCD_SEG_MAX_CH ; i++)
+  for (int i=0; i<LCD_SEG_MAX_CH; i++)
   {
-    lcdWrite(i, 0xFF);
+    lcdWrite(i, 0x0F);
   }
 }
 
@@ -268,13 +294,13 @@ void cliLcd(cli_args_t *args)
   uint8_t index;
   uint8_t data;
 
-  if (args->argc == 1 && args->isStr(0, "all_on") == true)       //InternalBiasResistor
+  if (args->argc == 1 && args->isStr(0, "allon") == true)       //InternalBiasResistor
   {
     lcdAllDisp();
     ret = true;
   }
 
-  if (args->argc == 1 && args->isStr(0, "all_off") == true)       //InternalBiasResistor
+  if (args->argc == 1 && args->isStr(0, "alloff") == true)       //InternalBiasResistor
   {
     lcdClearBuffer();
     ret = true;
@@ -302,7 +328,7 @@ void cliLcd(cli_args_t *args)
     ret = true;
   }
 
-#if 0
+#if 1
   if (args->argc == 2 && args->isStr(0, "internalbiasresistor") == true)       //InternalBiasResistor
   {
     index      = (uint8_t)args->getData(1);
@@ -375,32 +401,32 @@ void cliLcd(cli_args_t *args)
 
   if (ret != true)
   {
-    cliPrintf("lcd all_on\r\n");
-    cliPrintf("lcd all_off\r\n");
+    cliPrintf("lcd allon\r\n");
+    cliPrintf("lcd alloff\r\n");
     cliPrintf("lcd 7seg [1~4] data\r\n");
     cliPrintf("lcd write [0~%d], data\r\n", LCD_SEG_MAX_CH-1);
 
-#if 0
-    cliPrintf("lcd IBR [0~3]\r\n");
+#if 1
+    cliPrintf("lcd InternalBiasResistor [0~3]\r\n");
     cliPrintf("\t0 : RLCD3_105_105_80 , 1 : RLCD1_10_10_10 \r\n");
     cliPrintf("\t2 : RLCD2_66_66_50   , 3 : RLCD4_320_320_240 \r\n");
 
-    cliPrintf("lcd DutyBias [0~5]\r\n");
+    cliPrintf("lcd dutyandbias [0~5]\r\n");
     cliPrintf("\t0 : DUTY1_8_BIAS1_4  , 1 : DUTY1_6_BIAS1_4 \r\n");
     cliPrintf("\t2 : DUTY1_5_BIAS1_3  , 3 : DUTY1_4_BIAS1_3 \r\n");
     cliPrintf("\t4 : DUTY1_3_BIAS1_3  , 5 : DUTY1_3_BIAS1_2 \r\n");
 
-    cliPrintf("lcd LcdClock [0~3]\r\n");
+    cliPrintf("lcd clock [0~3]\r\n");
     cliPrintf("\t0 : LCDCLK_128Hz    ,  1 : LCDCLK_256Hz \r\n");
     cliPrintf("\t2 : LCDCLK_512Hz    ,  3 : LCDCLK_1024Hz \r\n");
 
-    cliPrintf("lcd BiasModeClk [0~7]\r\n");
+    cliPrintf("lcd biasmodeclk [0~7]\r\n");
     cliPrintf("\t0 : fLCD_1CLK       ,  1 : fLCD_2CLK \r\n");
     cliPrintf("\t2 : fLCD_3CLK       ,  3 : fLCD_4CLK \r\n");
     cliPrintf("\t4 : fLCD_5CLK       ,  5 : fLCD_6CLK \r\n");
     cliPrintf("\t6 : fLCD_7CLK       ,  7 : fLCD_8CLK \r\n");
 
-    cliPrintf("lcd VlcVoltage [0~15]\r\n");
+    cliPrintf("lcd vlcvoltage [0~15]\r\n");
     cliPrintf("\t0 : VDD16_31_STEP   ,  1 : VDD16_30_STEP \r\n");
     cliPrintf("\t2 : VDD16_29_STEP   ,  3 : VDD16_28_STEP \r\n");
     cliPrintf("\t4 : VDD16_27_STEP   ,  5 : VDD16_26_STEP \r\n");
@@ -410,18 +436,18 @@ void cliLcd(cli_args_t *args)
     cliPrintf("\t12 : VDD16_19_STEP  ,  13 : VDD16_18_STEP \r\n");
     cliPrintf("\t14 : VDD16_17_STEP  ,  15 : VDD16_16_STEP \r\n");
 
-    cliPrintf("lcd LcdExtBias [0~1]\r\n");
+    cliPrintf("lcd extbias [0~1]\r\n");
     cliPrintf("\t0 : DISABLE         ,  1 : ENABLE \r\n");
 
-    cliPrintf("lcd LcdAutoBias [0~1]\r\n");
+    cliPrintf("lcd autobias [0~1]\r\n");
     cliPrintf("\t0 : DISABLE         ,  1 : ENABLE \r\n");
 
-    cliPrintf("lcd LcdContrast [0~1]\r\n");
+    cliPrintf("lcd contrast [0~1]\r\n");
     cliPrintf("\t0 : DISABLE         ,  1 : ENABLE \r\n");
 #endif
   }
 
-#if 0
+#if 1
   cliPrintf("lcdConfig.InternalBiasResistor \t: %d\r\n", lcdConfig.InternalBiasResistor);
   cliPrintf("lcdConfig.LcdDutyandBias \t: %d\r\n", lcdConfig.LcdDutyandBias);
   cliPrintf("lcdConfig.LcdClock \t: %d\r\n", lcdConfig.LcdClock);

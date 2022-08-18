@@ -23,6 +23,7 @@
 #include "ir_remote.h"
 #include "lcd.h"
 #include "data_flash.h"
+#include "i2c.h"
 
 void hwInit(void);
 

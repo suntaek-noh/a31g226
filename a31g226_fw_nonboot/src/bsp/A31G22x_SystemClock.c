@@ -35,7 +35,7 @@ void SystemClock_Config (void);
 void SystemClock_Config (void)
 {
 
-    //HAL_SCU_ClockOutput(4, ENABLE);  // Enable Main CLK output via CLKO(PF4) port
+    HAL_SCU_ClockOutput(4, ENABLE);  // Enable Main CLK output via CLKO(PF4) port
 
 #ifdef USED_LSI
     HAL_SCU_SetSystemClock(SYSCLK_LSI, SYSDIV_NONE);  // Use LSI clock (500kHz)
