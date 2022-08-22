@@ -53,13 +53,10 @@ void SYSCLKFAIL_IRQHandler(void) {
 }
 
 /* GPIO */
-void GPIOAB_IRQHandler(void) {
 
-}
 
-void GPIOCD_IRQHandler(void) {
 
-}
+
 
 void GPIOE_IRQHandler(void) {
 

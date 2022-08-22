@@ -294,6 +294,7 @@ bool i2cWriteBytes(uint8_t ch, uint16_t dev_addr, uint16_t reg_addr, uint8_t *p_
   }
 
   tx_buf[0] = reg_addr;
+
   for (int i=0; i<length; i++)
   {
     tx_buf[1+i] = p_data[i];

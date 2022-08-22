@@ -20,7 +20,7 @@
 #define _USE_HW_IR_REMOTE
 
 #define _USE_HW_GPIO
-#define      HW_GPIO_MAX_CH         10//25
+#define      HW_GPIO_MAX_CH         11
 
 #define _USE_HW_LED
 #define      HW_LED_MAX_CH          6
@@ -58,8 +58,14 @@
 #define      HW_PWM_MAX_CH          3
 
 #define _USE_HW_SEG_LCD
-#define      HW_LCD_SEG_MAX_CH          11
-#define      HW_LCD_COM_MAX_CH          4
+#define      HW_LCD_SEG_MAX_CH      11
+#define      HW_LCD_COM_MAX_CH      4
+
+#define _USE_HW_RELAY
+
+#define _USE_HW_TOUCH
+#define _USE_HW_GT216L
+
 
 
 //#define _USE_HW_GT216L

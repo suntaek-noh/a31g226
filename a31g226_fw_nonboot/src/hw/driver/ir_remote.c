@@ -77,7 +77,6 @@ bool irRemoteInit(void)
   HAL_SCU_MiscClockConfig(4, PD0_TYPE, CLKSRC_LSI, 5); // 1 clock = 10us
   //HAL_SCU_MiscClockConfig(1, TIMER1n_TYPE, CLKSRC_PLL, 5); // 1 clock = 10us
 
-
   TIMER1n_Config.StartSync = DISABLE;
   TIMER1n_Config.ClearSync = DISABLE;
   TIMER1n_Config.ExtClock = DISABLE; // PCLK
@@ -109,7 +108,6 @@ bool irRemoteInit(void)
 
   return ret;
 }
-
 
 IrRemoteBitValue_t irRemoteGetBit(ir_remote_bit_ref_t *p_ref, ir_remote_bit_t *p_bit)
 {

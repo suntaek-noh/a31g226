@@ -19,12 +19,14 @@ __attribute__((section(".version"))) firm_version_t firm_ver =
 
 void hwInit(void)
 {
+  __disable_irq();
+
   bspInit();
 
   cliInit();
   gpioInit();
   logInit();
-  ledInit();
+  //ledInit();
   buttonInit();
   uartInit();
 
@@ -45,6 +47,8 @@ void hwInit(void)
   dataFlashInit();
 
   i2cInit();
+  relayInit();
 
-  //lcdInit();
+  lcdInit();
+  touchInit();
 }

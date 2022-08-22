@@ -25,6 +25,37 @@ void SysTick_Handler(void)
   buzzerISR(NULL);
 }
 
+
+void GPIOAB_IRQHandler(void)
+{
+  uint32_t Status;
+
+  Status = HAL_GPIO_EXTI_GetState((PORT_Type *)PA);
+
+  if((Status & (1 << (2*2))) == (1 << (2*2)))
+  {
+
+    logPrintf("exti portA pin2 falling edge\r\n");
+    HAL_GPIO_EXTI_ClearPin((PORT_Type *)PA, Status);
+  }
+}
+
+void GPIOCD_IRQHandler(void)
+{
+  uint32_t Status;
+
+  Status = HAL_GPIO_EXTI_GetState((PORT_Type *)PC);
+
+  if((Status & (1 << (12*2))) == (1 << (12*2)))
+  {
+
+    logPrintf("exti portC pin12 falling edge\r\n");
+    HAL_GPIO_EXTI_ClearPin((PORT_Type *)PC, Status);
+  }
+}
+
+
+
 void bspInit(void)
 {
 
@@ -41,7 +72,7 @@ void bspInit(void)
   SysTick_Config(SystemCoreClock/1000);     //1ms interrupt
 
   /* Enable IRQ Interrupts */
-   __enable_irq();
+    __enable_irq();
 }
 
 void delay(uint32_t ms)
@@ -82,6 +113,101 @@ void Port_Init(void)
         ;
     }
 
+
+    // PORT - B
+    PB->MOD = 0x00UL  // 0 : Input Mode 1 : Output Mode 2 : Alternative function mode
+            | (0x0UL << PORT_MOD_MODE15_Pos)  // P15
+            | (0x0UL << PORT_MOD_MODE14_Pos)  // P14
+            | (0x0UL << PORT_MOD_MODE13_Pos)  // P13
+            | (0x0UL << PORT_MOD_MODE12_Pos)  // P12
+            | (0x0UL << PORT_MOD_MODE11_Pos)  // P11
+            | (0x0UL << PORT_MOD_MODE10_Pos)  // P10
+            | (0x0UL << PORT_MOD_MODE9_Pos)   // P9
+            | (0x0UL << PORT_MOD_MODE8_Pos)   // P8
+            | (0x0UL << PORT_MOD_MODE7_Pos)   // P7
+            | (0x0UL << PORT_MOD_MODE6_Pos)   // P6
+            | (0x02UL << PORT_MOD_MODE5_Pos)   // P5  - Alternative function mode (SWDIO)
+            | (0x02UL << PORT_MOD_MODE4_Pos)   // P4  - Alternative function mode (SWCLK)
+            | (0x0UL << PORT_MOD_MODE3_Pos)   // P3
+            | (0x0UL << PORT_MOD_MODE2_Pos)   // P2
+            | (0x0UL << PORT_MOD_MODE1_Pos)   // P1
+            | (0x0UL << PORT_MOD_MODE0_Pos);  // P0
+
+    PB->TYP = 0x00UL  // 0 : Push-pull Output 1 : Open-drain Output
+            | (0x00UL << PORT_TYP_TYP15_Pos)  // P15
+            | (0x00UL << PORT_TYP_TYP14_Pos)  // P14
+            | (0x00UL << PORT_TYP_TYP13_Pos)  // P13
+            | (0x00UL << PORT_TYP_TYP12_Pos)  // P12
+            | (0x00UL << PORT_TYP_TYP11_Pos)  // P11
+            | (0x00UL << PORT_TYP_TYP10_Pos)  // P10
+            | (0x00UL << PORT_TYP_TYP9_Pos)   // P9
+            | (0x00UL << PORT_TYP_TYP8_Pos)   // P8
+            | (0x00UL << PORT_TYP_TYP7_Pos)   // P7
+            | (0x00UL << PORT_TYP_TYP6_Pos)   // P6
+            | (0x00UL << PORT_TYP_TYP5_Pos)   // P5
+            | (0x00UL << PORT_TYP_TYP4_Pos)   // P4
+            | (0x00UL << PORT_TYP_TYP3_Pos)   // P3
+            | (0x00UL << PORT_TYP_TYP2_Pos)   // P2
+            | (0x00UL << PORT_TYP_TYP1_Pos)   // P1
+            | (0x00UL << PORT_TYP_TYP0_Pos);  // P0
+
+    PB->AFSR1 = 0x00UL
+            | (0x00UL << PORT_AFSR1_AFSR7_Pos)   // P7  - 0 :                1 : RXD1           2 :                3 : AN16           4 :
+            | (0x00UL << PORT_AFSR1_AFSR6_Pos)   // P6  - 0 :                1 : TXD1           2 : EC11           3 : AN15           4 :
+            | (0x02UL << PORT_AFSR1_AFSR5_Pos)   // P5  - 0 :                1 : RXD0           2 : SWDIO          3 :                4 :
+            | (0x02UL << PORT_AFSR1_AFSR4_Pos)   // P4  - 0 :                1 : TXD0           2 : SWCLK          3 :                4 :
+            | (0x00UL << PORT_AFSR1_AFSR3_Pos)   // P3  - 0 :                1 : BOOT           2 : SS10/SS20      3 :                4 :
+            | (0x00UL << PORT_AFSR1_AFSR2_Pos)   // P2  - 0 :                1 :                2 : SCK10/SCK20    3 : AN10           4 :
+            | (0x00UL << PORT_AFSR1_AFSR1_Pos)   // P1  - 0 :                1 : RXD10          2 : MISO10/MISO20  3 : AN9            4 :
+            | (0x00UL << PORT_AFSR1_AFSR0_Pos);  // P0  - 0 :                1 : TXD10          2 : MOSI10/MOSI20  3 : AN8            4 :
+
+    PB->AFSR2 = 0x00UL
+            | (0x00UL << PORT_AFSR2_AFSR15_Pos)  // P15 - 0 :                1 :                2 :                3 :                4 :
+            | (0x00UL << PORT_AFSR2_AFSR14_Pos)  // P14 - 0 :                1 :                2 :                3 :                4 :
+            | (0x00UL << PORT_AFSR2_AFSR13_Pos)  // P13 - 0 :                1 :                2 :                3 :                4 :
+            | (0x00UL << PORT_AFSR2_AFSR12_Pos)  // P12 - 0 :                1 :                2 :                3 :                4 :
+            | (0x00UL << PORT_AFSR2_AFSR11_Pos)  // P11 - 0 :                1 : T15C           2 : EC16           3 : T15O           4 :
+            | (0x00UL << PORT_AFSR2_AFSR10_Pos)  // P10 - 0 :                1 : T16C           2 : EC15           3 : T16O           4 :
+            | (0x00UL << PORT_AFSR2_AFSR9_Pos)   // P9  - 0 :                1 : T16O           2 : T16C           3 : EC15           4 :
+            | (0x00UL << PORT_AFSR2_AFSR8_Pos);  // P8  - 0 :                1 : T15O           2 : T15C           3 : EC16           4 :
+
+    PB->PUPD = 0x00UL  // 0 : Disable Pull-up/down 1 : Enable Pull-up 2 : Enable Pull-down
+            | (0x00UL << PORT_PUPD_PUPD15_Pos)  // P15
+            | (0x00UL << PORT_PUPD_PUPD14_Pos)  // P14
+            | (0x00UL << PORT_PUPD_PUPD13_Pos)  // P13
+            | (0x00UL << PORT_PUPD_PUPD12_Pos)  // P12
+            | (0x00UL << PORT_PUPD_PUPD11_Pos)  // P11
+            | (0x00UL << PORT_PUPD_PUPD10_Pos)  // P10
+            | (0x00UL << PORT_PUPD_PUPD9_Pos)   // P9
+            | (0x00UL << PORT_PUPD_PUPD8_Pos)   // P8
+            | (0x00UL << PORT_PUPD_PUPD7_Pos)   // P7
+            | (0x00UL << PORT_PUPD_PUPD6_Pos)   // P6
+            | (0x00UL << PORT_PUPD_PUPD5_Pos)   // P5
+            | (0x00UL << PORT_PUPD_PUPD4_Pos)   // P4
+            | (0x00UL << PORT_PUPD_PUPD3_Pos)   // P3
+            | (0x00UL << PORT_PUPD_PUPD2_Pos)   // P2
+            | (0x00UL << PORT_PUPD_PUPD1_Pos)   // P1
+            | (0x00UL << PORT_PUPD_PUPD0_Pos);  // P0
+
+    PB->OUTDR = 0x00UL  // 0 : Output Low 1 : Output High
+            | (0x00UL << PORT_OUTDR_OUTDR15_Pos)  // P15
+            | (0x00UL << PORT_OUTDR_OUTDR14_Pos)  // P14
+            | (0x00UL << PORT_OUTDR_OUTDR13_Pos)  // P13
+            | (0x00UL << PORT_OUTDR_OUTDR12_Pos)  // P12
+            | (0x00UL << PORT_OUTDR_OUTDR11_Pos)  // P11
+            | (0x00UL << PORT_OUTDR_OUTDR10_Pos)  // P10
+            | (0x00UL << PORT_OUTDR_OUTDR9_Pos)   // P9
+            | (0x00UL << PORT_OUTDR_OUTDR8_Pos)   // P8
+            | (0x00UL << PORT_OUTDR_OUTDR7_Pos)   // P7
+            | (0x00UL << PORT_OUTDR_OUTDR6_Pos)   // P6
+            | (0x00UL << PORT_OUTDR_OUTDR5_Pos)   // P5
+            | (0x00UL << PORT_OUTDR_OUTDR4_Pos)   // P4
+            | (0x00UL << PORT_OUTDR_OUTDR3_Pos)   // P3
+            | (0x00UL << PORT_OUTDR_OUTDR2_Pos)   // P2
+            | (0x00UL << PORT_OUTDR_OUTDR1_Pos)   // P1
+            | (0x00UL << PORT_OUTDR_OUTDR0_Pos);  // P0
+
+#if 0
     //--------------------------------------------------------------
     //    PORT INIT
     //        PA PB PC PD PE PF
@@ -541,5 +667,8 @@ void Port_Init(void)
             | (0x00UL << PORT_OUTDR_OUTDR2_Pos)   // P2
             | (0x00UL << PORT_OUTDR_OUTDR1_Pos)   // P1
             | (0x00UL << PORT_OUTDR_OUTDR0_Pos);  // P0
+
+
+#endif
 
 }

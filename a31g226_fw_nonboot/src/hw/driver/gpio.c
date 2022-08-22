@@ -39,6 +39,8 @@ gpio_tbl_t gpio_tbl[GPIO_MAX_CH] =
         {             PC, 1,  _DEF_INPUT, _DEF_LOW,  _DEF_HIGH, _DEF_HIGH},     //8     sw
         {             PB, 10, _DEF_OUTPUT,_DEF_HIGH, _DEF_LOW,  _DEF_LOW},      //9     backligh
 
+        {             PA, 3, _DEF_OUTPUT,_DEF_HIGH, _DEF_LOW,  _DEF_HIGH},      //10    touch reset
+
 
 #if 0
         {             PE, 0, _DEF_OUTPUT,_DEF_HIGH, _DEF_LOW,  _DEF_LOW},       //10     com0
@@ -115,7 +117,7 @@ bool gpioPinMode(uint8_t ch, uint8_t mode)
 
     case _DEF_INPUT_PULLUP:
       HAL_GPIO_ConfigOutput(gpio_tbl[ch].port, gpio_tbl[ch].pin, PCU_MODE_INPUT);
-          HAL_GPIO_ConfigPullup(gpio_tbl[ch].port, gpio_tbl[ch].pin, PCU_PUPD_PULL_UP);
+      HAL_GPIO_ConfigPullup(gpio_tbl[ch].port, gpio_tbl[ch].pin, PCU_PUPD_PULL_UP);
       break;
 
     case _DEF_INPUT_PULLDOWN:
@@ -225,6 +227,7 @@ void gpioPinToggle(uint8_t ch)
     HAL_GPIO_SetPin(gpio_tbl[ch].port, (1 << gpio_tbl[ch].pin));
   }
 }
+
 
 
 

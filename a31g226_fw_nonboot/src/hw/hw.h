@@ -24,6 +24,10 @@
 #include "lcd.h"
 #include "data_flash.h"
 #include "i2c.h"
+#include "relay.h"
+#include "touch.h"
+
+
 
 void hwInit(void);
 

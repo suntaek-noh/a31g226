@@ -59,7 +59,7 @@ void SystemClock_Config (void)
 #endif
 
 #ifdef USED_HSEPLL
-    HAL_SCU_SetPLLFreq(XTAL8MHz, PLL48MHz);   // Use PLL with HSE clock
+    HAL_SCU_SetPLLFreq(XTAL16MHz, PLL48MHz);   // Use PLL with HSE clock
 #endif
 
 

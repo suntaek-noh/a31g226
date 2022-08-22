@@ -97,7 +97,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="src/hw/driver/touch/gt216l.c|src/lib/abov_hal/Source/debug.c|src/lib/abov_hal/Source/debug_frmwrk.c|src/lib/abov_hal/Source/debug_cmd.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="src/lib/abov_hal/Source/debug.c|src/lib/abov_hal/Source/debug_frmwrk.c|src/lib/abov_hal/Source/debug_cmd.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -178,7 +178,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="src/hw/driver/touch/gt216l.c|src/lib/abov_hal/Source/debug.c|src/lib/abov_hal/Source/debug_frmwrk.c|src/lib/abov_hal/Source/debug_cmd.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="src/lib/abov_hal/Source/debug.c|src/lib/abov_hal/Source/debug_frmwrk.c|src/lib/abov_hal/Source/debug_cmd.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>

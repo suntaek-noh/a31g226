@@ -91,8 +91,6 @@ void buzzerOn(uint16_t freq_hz, uint16_t time_ms)
 
   is_on = true;
   on_time_cnt = time_ms;
-
-
 }
 
 void buzzerBeep(uint16_t time_ms)

@@ -31,7 +31,7 @@
 const uint8_t lcd_7seg_tab[10] =
     {
         //0   //1   //2   //3   //4   //5   //6   //7   //8   //9
-        0x5F, 0x06, 0x6B, 0x2f, 0x36, 0x3D, 0x7E, 0x17, 0x7F, 0x37
+        0x5F, 0x06, 0x6B, 0x2f, 0x36, 0x3D, 0x7C, 0x17, 0x7F, 0x37
     };
 
 
@@ -39,6 +39,7 @@ const uint8_t lcd_7seg_tab[10] =
 
 
 #define _PIN_DEF_BL_CTL       9
+
 #define LCD_DR_OFFSET_ADDR   (0x40005010UL)     // LCD->DR0
 
 uint8_t * DATA_BUFFER2 = (uint8_t *)LCD_DR_OFFSET_ADDR;
@@ -63,25 +64,16 @@ lcd_t lcd_com_tbl[LCD_COM_MAX_CH] =
 
 lcd_t lcd_seg_tbl[LCD_SEG_MAX_CH] =
     {
-
-#if 0
-        {PE, 4, "SEG1", 1},
-        {PE, 5, "SEG2", 2},
-        {PE, 6, "SEG3", 3},
-        {PE, 7, "SEG4", 4},
-#endif
-        {PD, 5, "SEG1", 7},
-        {PD, 1, "SEG2", 11},
-        {PD, 0, "SEG3", 12},
-        {PA, 6, "SEG4", 43},
-
+        {PE, 4,  "SEG1", 1},
+        {PE, 5,  "SEG2", 2},
+        {PE, 6,  "SEG3", 3},
+        {PE, 7,  "SEG4", 4},
         {PC, 11, "SEG5", 14},
         {PC, 6,  "SEG6", 19},
         {PC, 5,  "SEG7", 20},
         {PC, 4,  "SEG8", 21},
         {PC, 3,  "SEG9", 22},
         {PC, 2,  "SEG10", 23},
-
         {PB, 9,  "SEG11", 32},
     };
 
@@ -103,11 +95,11 @@ bool lcdInit(void)
 {
   bool ret = true;
 
-  backlight_value = 0;
+  backlight_value = 100;
 
   HAL_LCD_Module(ENABLE);
   HAL_SCU_LCD_ClockConfig(LCDCLK_MCCR5);          //LCDCLK_MCCR5
-  HAL_SCU_MiscClockConfig(5, LCD_TYPE, CLKSRC_HSE, 8);
+  HAL_SCU_MiscClockConfig(5, LCD_TYPE, CLKSRC_HSE, 16);
 
   HAL_LCD_Display(DISABLE);
 
@@ -132,26 +124,27 @@ bool lcdInit(void)
 
     DATA_BUFFER[i] = (uint8_t *)(LCD_DR_OFFSET_ADDR+lcd_seg_tbl[i].seg_num);
 
-    logPrintf("DATA_BUFFER[%d] : 0x%x\r\n", i, DATA_BUFFER[i]);
+    //logPrintf("DATA_BUFFER[%d] : 0x%x\r\n", i, DATA_BUFFER[i]);
 
   }
 
+#if 0
   HAL_GPIO_ConfigOutput(PE, 8, PCU_MODE_ALT_FUNC);        //
-  HAL_GPIO_ConfigFunction(PE, 8, PCU_ALT_FUNCTION_0);       //
+  HAL_GPIO_ConfigFunction(PE, 8, PCU_ALT_FUNCTION_3);       //
 
   HAL_GPIO_ConfigOutput(PE, 9, PCU_MODE_ALT_FUNC);        //
-  HAL_GPIO_ConfigFunction(PE, 9, PCU_ALT_FUNCTION_0);       //
+  HAL_GPIO_ConfigFunction(PE, 9, PCU_ALT_FUNCTION_3);       //
 
   HAL_GPIO_ConfigOutput(PE, 10, PCU_MODE_ALT_FUNC);        //
-  HAL_GPIO_ConfigFunction(PE, 10, PCU_ALT_FUNCTION_0);       //
+  HAL_GPIO_ConfigFunction(PE, 10, PCU_ALT_FUNCTION_3);       //
 
   HAL_GPIO_ConfigOutput(PE, 11, PCU_MODE_ALT_FUNC);        //
-  HAL_GPIO_ConfigFunction(PE, 11, PCU_ALT_FUNCTION_0);       //
+  HAL_GPIO_ConfigFunction(PE, 11, PCU_ALT_FUNCTION_3);       //
+#endif
 
 
 
-
-  lcdConfig.InternalBiasResistor    = RLCD4_320_320_240;
+  lcdConfig.InternalBiasResistor    = RLCD1_10_10_10;
   lcdConfig.LcdDutyandBias          = DUTY1_4_BIAS1_3;
   lcdConfig.LcdClock                = LCDCLK_128Hz;
   lcdConfig.LcdAutoBias             = DISABLE;
@@ -160,6 +153,7 @@ bool lcdInit(void)
   lcdConfig.LcdContrast             = ENABLE;            // User for Internal Bias Only
   lcdConfig.VlcVoltage              = VDD16_16_STEP;     // When VDD = 5.0V and LCD Contrast Enabled, VLC0 = (5.0 V * (16 / 25)) = 3.2 V
 
+#if 0
 
   if (lcdConfig.LcdExtBias == ENABLE)
   {
@@ -180,7 +174,7 @@ bool lcdInit(void)
     HAL_LCD_SetVLC(LCD_VLC2, DISABLE);
     HAL_LCD_SetVLC(LCD_VLC3, DISABLE);
   }
-
+#endif
 
   HAL_LCD_Configuration(&lcdConfig);                      // update LCD Setting
   HAL_LCD_Display(ENABLE);
@@ -259,16 +253,13 @@ void lcdAllDisp(void)
   }
 }
 
-
 void lcd7SegDis(uint8_t pos, uint8_t data)
 {
-
   switch(pos)
   {
     case 1:
       lcdWrite(LCD_7SEG1A, lcd_7seg_tab[data]&0x0f);
       lcdWrite(LCD_7SEG1B, (lcd_7seg_tab[data] >> 4)&0x0f);
-      //logPrintf("*DATA_BUFFER[%d] : 0x%x", LCD_7SEG1A, *DATA_BUFFER[LCD_7SEG1A]);
       break;
 
     case 2:
@@ -293,6 +284,80 @@ void cliLcd(cli_args_t *args)
   bool ret = false;
   uint8_t index;
   uint8_t data;
+
+  if (args->argc == 1 && args->isStr(0, "test") == true)       //InternalBiasResistor
+  {
+    uint32_t pre_time;
+
+    uint8_t data  = 0;
+    uint8_t count = 0;
+    uint8_t bit_count = 0;
+
+    uint8_t step  = 0;
+
+    lcdClearBuffer();
+
+    pre_time = millis();
+
+    while(cliKeepLoop())
+    {
+      if(millis() - pre_time >= 300)
+      {
+        pre_time = millis();
+
+
+        if(step == 0)
+        {
+          if(count < 11)
+          {
+            if(bit_count < 4)
+            {
+              data |= (1 << bit_count);
+              *DATA_BUFFER[count] = data;
+              bit_count++;
+            }
+            else
+            {
+              bit_count = 0;
+              data      = 0;
+              count++;
+            }
+          }
+          else
+          {
+            count = 0;
+            bit_count =0;
+            step =1;
+
+            lcdClearBuffer();
+          }
+
+        }
+        else if(step == 1)
+        {
+          if(count < 10)
+          {
+            lcd7SegDis(1, count);
+            lcd7SegDis(2, count);
+            lcd7SegDis(3, count);
+            lcd7SegDis(4, count);
+            count++;
+          }
+          else
+          {
+            count = 0;
+            step = 0;
+
+            lcdClearBuffer();
+          }
+        }
+      }
+    }
+
+    ret = true;
+  }
+
+
 
   if (args->argc == 1 && args->isStr(0, "allon") == true)       //InternalBiasResistor
   {

@@ -17,6 +17,7 @@ void apInit(void)
 void apMain(void)
 {
   uint32_t pre_time;
+  uint8_t touch_data[2];
 
   pre_time = millis();
 
@@ -27,12 +28,22 @@ void apMain(void)
       pre_time = millis();
 
       //lcdAllDisp();
-      ledToggle(_DEF_LED1);
+      //ledToggle(_DEF_LED1);
       //ledToggle(_DEF_LED2);
       //ledToggle(_DEF_LED3);
       //ledToggle(_DEF_LED4);
       //ledToggle(_DEF_LED5);
+
+      //touchGetTouchedData(touch_data);
+
+      //logPrintf("touch data[0] : 0x%x\r\n", touch_data[0]);
+      //logPrintf("touch data[1] : 0x%x\r\n", touch_data[1]);
     }
+
+
+
+
+
 
    cliMain();
 
