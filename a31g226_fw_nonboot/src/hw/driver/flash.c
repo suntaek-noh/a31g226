@@ -71,7 +71,6 @@ bool flashErase(uint32_t addr, uint32_t length)
       status = HAL_CFMC_SelfErase (((start_sector_num+i) * FLASH_SECTOR_SIZE) , FLASH_SECTOR_SIZE);
     }
 
-
     if(status == HAL_OK)
     {
       ret = true;

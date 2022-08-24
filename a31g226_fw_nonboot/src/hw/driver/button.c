@@ -14,7 +14,7 @@
 typedef struct
 {
   PORT_Type     *port;
-  uint32_t        pin;
+  uint32_t       pin;
   uint8_t        on_state;
 }button_tbl_t;
 
@@ -117,7 +117,6 @@ void buttonObjCreate(button_obj_t *p_obj, uint8_t ch, uint32_t pressed_time, uin
 bool buttonObjUpdate(button_obj_t *p_obj)
 {
   bool ret = false;
-
 
   switch(p_obj->state)
   {
@@ -223,10 +222,16 @@ uint8_t buttonObjGetEvent(button_obj_t *p_obj)
   return p_obj->event_flag;
 }
 
-void buttonObjClearEvent(button_obj_t *p_obj)
+void buttonObjClearEventAll(button_obj_t *p_obj)
 {
   p_obj->event_flag = 0;
 }
+
+void buttonObjClearEvent(button_obj_t *p_obj, uint8_t event_bit)
+{
+  p_obj->event_flag &= ~event_bit;
+}
+
 
 uint8_t buttonObjGetState(button_obj_t *p_obj)
 {
@@ -279,10 +284,12 @@ void cliButton(cli_args_t *args)
           cliPrintf("button pressed\n");
         if (button_event & BUTTON_EVT_CLICKED)
           cliPrintf("button clicked %d\n", button_sw.click_count);
+        if (button_event & BUTTON_EVT_REPEATED)
+          cliPrintf("button repeated %d\n", button_sw.click_count);
         if (button_event & BUTTON_EVT_RELEASED)
           cliPrintf("button released\n");
 
-        buttonObjClearEvent(&button_sw);
+        buttonObjClearEventAll(&button_sw);
       }
 
       delay(5);
@@ -303,3 +310,4 @@ void cliButton(cli_args_t *args)
 #endif
 
 #endif
+

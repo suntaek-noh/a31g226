@@ -368,8 +368,10 @@ int32_t HAL_I2C_MWait(I2C_Type *I2Cx) {
 
     I2Cx->ST = 0xFF;
     while (1) {
-        if ((I2Cx->CR & 0x10) != 0)
-            break;
+        if((I2Cx->CR & 0x10) != 0)           // touch ic를 제거시 여기서 먹통됨.
+          break;
+
+       // logPrintf("MWait error\r\n");
     }
 
     tmp = I2Cx->ST;
@@ -421,7 +423,6 @@ Status HAL_I2C_MasterTransferData(I2C_Type* I2Cx, I2C_M_SETUP_Type *TransferCfg,
 
     while (I2Cx->ST & 0x04) {}    // busy check //
 
-
     if (Opt == I2C_TRANSFER_POLLING) {
         /* First Start condition -------------------------------------------------------------- */
         // Reset I2C setup value to default state
@@ -444,6 +445,7 @@ Status HAL_I2C_MasterTransferData(I2C_Type* I2Cx, I2C_M_SETUP_Type *TransferCfg,
                 | (1 << 7)    // I2C Block Enable
                 | (1 << 5) // Interrupt Enable
                 | (1 << 3); // ACKEN
+
                 return ERROR;
             }
 

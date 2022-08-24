@@ -25,8 +25,11 @@ void hwInit(void)
 
   cliInit();
   gpioInit();
+
+
   logInit();
   //ledInit();
+
   buttonInit();
   uartInit();
 
@@ -39,6 +42,8 @@ void hwInit(void)
   logPrintf("SystemCoreClock\t\t: %dMhz\r\n", SystemCoreClock/1000000);
   logPrintf("SystemPeriClock\t\t: %dMhz\r\n", SystemPeriClock/1000000);
 
+
+
   buzzerInit();
   pwmInit();
   irRemoteInit();
@@ -47,8 +52,9 @@ void hwInit(void)
   dataFlashInit();
 
   i2cInit();
-  relayInit();
+  tbuttonInit();
+  //relayInit();
 
   lcdInit();
-  touchInit();
+
 }

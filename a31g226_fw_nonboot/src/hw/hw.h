@@ -25,7 +25,8 @@
 #include "data_flash.h"
 #include "i2c.h"
 #include "relay.h"
-#include "touch.h"
+#include "tbutton.h"
+#include "lcd.h"
 
 
 

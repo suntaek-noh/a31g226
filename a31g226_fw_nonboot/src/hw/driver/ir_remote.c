@@ -153,8 +153,6 @@ void TIMER15_IRQHandler(void)
 
     HAL_TIMER1n_ClearStatus(TIMER15, TIMER1n_STATUS_CAPTURE_INT);
   }
-
-
 }
 
 
@@ -162,7 +160,6 @@ void TIMER15_IRQHandler(void)
 void cliIrRemote(cli_args_t *args)
 {
   bool ret = false;
-
 
   if (args->argc == 1 && args->isStr(0, "bits") == true)
   {

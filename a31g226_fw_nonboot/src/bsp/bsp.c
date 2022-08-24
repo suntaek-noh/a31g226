@@ -14,6 +14,7 @@ extern uint32_t __isr_vector_addr;
 
 extern void SystemClock_Config (void);
 extern void buzzerISR(void *arg);
+extern void tbuttonISR(void);
 
 
 static void Port_Init(void);
@@ -23,36 +24,10 @@ void SysTick_Handler(void)
   systick_counter++;
 
   buzzerISR(NULL);
+  tbuttonISR();
 }
 
 
-void GPIOAB_IRQHandler(void)
-{
-  uint32_t Status;
-
-  Status = HAL_GPIO_EXTI_GetState((PORT_Type *)PA);
-
-  if((Status & (1 << (2*2))) == (1 << (2*2)))
-  {
-
-    logPrintf("exti portA pin2 falling edge\r\n");
-    HAL_GPIO_EXTI_ClearPin((PORT_Type *)PA, Status);
-  }
-}
-
-void GPIOCD_IRQHandler(void)
-{
-  uint32_t Status;
-
-  Status = HAL_GPIO_EXTI_GetState((PORT_Type *)PC);
-
-  if((Status & (1 << (12*2))) == (1 << (12*2)))
-  {
-
-    logPrintf("exti portC pin12 falling edge\r\n");
-    HAL_GPIO_EXTI_ClearPin((PORT_Type *)PC, Status);
-  }
-}
 
 
 

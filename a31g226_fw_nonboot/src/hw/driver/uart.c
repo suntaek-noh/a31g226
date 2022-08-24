@@ -64,7 +64,7 @@ bool uartOpen(uint8_t ch, uint32_t baud)
       uart_tbl[ch].type    = UART_HW_TYPE_MCU;
       uart_tbl[ch].baud    = baud;
 
-      uart_tbl[ch].p_husart = USART10;
+      uart_tbl[ch].p_husart = USART11;
 
       uart_tbl[ch].usart_init.Mode               = USART_UART_MODE;
       uart_tbl[ch].usart_init.Baud_rate          = baud;
@@ -77,20 +77,21 @@ bool uartOpen(uint8_t ch, uint32_t baud)
 
       qbufferCreate(&uart_tbl[ch].qbuffer, uart_tbl[ch].rx_buf, UART_RX_BUF_LENGTH);
 
-      HAL_GPIO_ConfigOutput(PB, 1, PCU_MODE_ALT_FUNC);
-      HAL_GPIO_ConfigFunction(PB, 1, PCU_ALT_FUNCTION_1);
-      HAL_GPIO_ConfigPullup(PB, 1, PCU_PUPD_PULL_UP);
+      // Initialize Rxd port connect
+      HAL_GPIO_ConfigOutput(PD, 3, PCU_MODE_ALT_FUNC);
+      HAL_GPIO_ConfigFunction(PD, 3, PCU_ALT_FUNCTION_1);
+      HAL_GPIO_ConfigPullup(PD, 3, PCU_PUPD_PULL_UP);
 
       // Initialize Txd port connect
-      HAL_GPIO_ConfigOutput(PB, 0, PCU_MODE_ALT_FUNC);
-      HAL_GPIO_ConfigFunction(PB, 0, PCU_ALT_FUNCTION_1);
+      HAL_GPIO_ConfigOutput(PD, 2, PCU_MODE_ALT_FUNC);
+      HAL_GPIO_ConfigFunction(PD, 2, PCU_ALT_FUNCTION_1);
 
       HAL_USART_Init(uart_tbl[ch].p_husart, &uart_tbl[ch].usart_init);
 
       uart_tbl[ch].p_husart->CR1 |= USART_IER_RXCINT_EN;
 
-      NVIC_SetPriority(USART10_IRQn, 5);
-      NVIC_EnableIRQ(USART10_IRQn);
+      NVIC_SetPriority(USART11_IRQn, 5);
+      NVIC_EnableIRQ(USART11_IRQn);
 
       uart_tbl[ch].is_open = true;
 
@@ -265,7 +266,7 @@ void UART0_IRQHandler(void)
 }
 #endif
 
-void USART10_IRQHandler(void)
+void USART11_IRQHandler(void)
 {
   uart_tbl_t *p_usart = &uart_tbl[_DEF_UART1];
   uint32_t status_reg;

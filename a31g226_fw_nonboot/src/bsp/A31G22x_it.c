@@ -12,6 +12,9 @@
 **********************************************************************/
 #include "A31G22x_it.h"
 
+#include "hw_def.h"
+
+
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
@@ -54,8 +57,34 @@ void SYSCLKFAIL_IRQHandler(void) {
 
 /* GPIO */
 
+void GPIOAB_IRQHandler(void)
+{
+  uint32_t Status;
+
+  Status = HAL_GPIO_EXTI_GetState((PORT_Type *)PA);
+
+  if((Status & (1 << (2*2))) == (1 << (2*2)))
+  {
+    //tbutton1ISR();
+
+    HAL_GPIO_EXTI_ClearPin((PORT_Type *)PA, Status);
+  }
+}
 
 
+void GPIOCD_IRQHandler(void)
+{
+  uint32_t Status;
+
+  Status = HAL_GPIO_EXTI_GetState((PORT_Type *)PC);
+
+  if((Status & (1 << (12*2))) == (1 << (12*2)))
+  {
+    //tbutton2ISR();
+
+    HAL_GPIO_EXTI_ClearPin((PORT_Type *)PC, Status);
+  }
+}
 
 
 void GPIOE_IRQHandler(void) {
@@ -117,6 +146,10 @@ void I2C0_IRQHandler(void) {
 }
 
 void I2C1_IRQHandler(void) {
+  HAL_I2C_Interrupt_MasterHandler(I2C1);
+  if (HAL_I2C_MasterTransferComplete(I2C1)) {
+
+  }
 
 }
 
@@ -128,9 +161,7 @@ void I2C2_SPI20_IRQHandler(void) {
     //USART_Handler(USART10);
 //}
 
-void USART11_IRQHandler(void) {
-    //USART_Handler(USART11);
-}
+
 
 #if defined(USART12) || defined(UART13)
 void USART12_13_SPI21_IRQHandler(void) {

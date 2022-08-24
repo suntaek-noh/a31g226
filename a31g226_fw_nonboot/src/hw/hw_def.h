@@ -20,7 +20,7 @@
 #define _USE_HW_IR_REMOTE
 
 #define _USE_HW_GPIO
-#define      HW_GPIO_MAX_CH         11
+#define      HW_GPIO_MAX_CH         13
 
 #define _USE_HW_LED
 #define      HW_LED_MAX_CH          6
@@ -38,7 +38,7 @@
 
 #define _USE_HW_BUTTON
 #define      HW_BUTTON_MAX_CH       1
-#define      HW_BUTTON_OBJ_USE      0
+#define      HW_BUTTON_OBJ_USE      1
 
 #define _USE_HW_CLI
 #define      HW_CLI_CMD_LIST_MAX    16
@@ -64,6 +64,10 @@
 #define _USE_HW_RELAY
 
 #define _USE_HW_TOUCH
+#define      HW_TBUTTON_MAX_IC      2
+#define      HW_MAX_TOUCH_IC1_CH    10
+#define      HW_MAX_TOUCH_IC2_CH    2
+#define      HW_TOUCH_OBJ_USE       1
 #define _USE_HW_GT216L
 
 

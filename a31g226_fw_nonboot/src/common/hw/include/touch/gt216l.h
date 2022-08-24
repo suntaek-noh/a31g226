@@ -13,7 +13,7 @@
 
 #ifdef _USE_HW_GT216L
 
-#include "touch.h"
+#include "tbutton.h"
 
 
 #define GT216L_CHIP1_ADDR                 0xB0
@@ -23,6 +23,7 @@
 #define GT216L_2_MAX_TOUCHES          2
 
 
+#define GT216L_TOUCH_STATUS         0x01
 #define GT216L_TOUCH_OUT            0x02      // 0x02 ~ 0x03
 #define GT21L_IO_DIR1               0x04
 #define GT21L_IO_DIR2               0x05
@@ -42,7 +43,7 @@
 
 
 
-bool gt216lInitDriver(touch_driver_t *p_driver);
+bool gt216lInitDriver(tbutton_driver_t *p_driver);
 
 
 

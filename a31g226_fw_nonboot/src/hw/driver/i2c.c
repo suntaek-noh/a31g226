@@ -306,7 +306,6 @@ bool i2cWriteBytes(uint8_t ch, uint16_t dev_addr, uint16_t reg_addr, uint8_t *p_
 
   i2c_ret = HAL_I2C_MasterTransmitData(p_handle, &i2c_tbl[ch].m_setup, I2C_TRANSFER_POLLING);
 
-
   if(i2c_ret == SUCCESS)
   {
     ret = true;

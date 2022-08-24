@@ -8,6 +8,7 @@
 
 #include "lcd.h"
 #include "cli.h"
+#include "gpio.h"
 
 #ifdef _USE_HW_PWM
 #include "pwm.h"
@@ -301,12 +302,12 @@ void cliLcd(cli_args_t *args)
 
     while(cliKeepLoop())
     {
-      if(millis() - pre_time >= 300)
+      if(millis() - pre_time >= 500)
       {
         pre_time = millis();
 
 
-        if(step == 0)
+        if(step == 1)
         {
           if(count < 11)
           {
@@ -325,15 +326,15 @@ void cliLcd(cli_args_t *args)
           }
           else
           {
-            count = 0;
-            bit_count =0;
-            step =1;
+            count     = 0;
+            bit_count = 0;
+            step      = 0;
 
             lcdClearBuffer();
           }
 
         }
-        else if(step == 1)
+        else if(step == 0)
         {
           if(count < 10)
           {
@@ -346,7 +347,7 @@ void cliLcd(cli_args_t *args)
           else
           {
             count = 0;
-            step = 0;
+            step = 1;
 
             lcdClearBuffer();
           }
@@ -471,7 +472,7 @@ void cliLcd(cli_args_t *args)
     cliPrintf("lcd 7seg [1~4] data\r\n");
     cliPrintf("lcd write [0~%d], data\r\n", LCD_SEG_MAX_CH-1);
 
-#if 1
+#if 0
     cliPrintf("lcd InternalBiasResistor [0~3]\r\n");
     cliPrintf("\t0 : RLCD3_105_105_80 , 1 : RLCD1_10_10_10 \r\n");
     cliPrintf("\t2 : RLCD2_66_66_50   , 3 : RLCD4_320_320_240 \r\n");

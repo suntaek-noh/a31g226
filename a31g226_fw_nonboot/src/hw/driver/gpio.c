@@ -40,6 +40,9 @@ gpio_tbl_t gpio_tbl[GPIO_MAX_CH] =
         {             PB, 10, _DEF_OUTPUT,_DEF_HIGH, _DEF_LOW,  _DEF_LOW},      //9     backligh
 
         {             PA, 3, _DEF_OUTPUT,_DEF_HIGH, _DEF_LOW,  _DEF_HIGH},      //10    touch reset
+        {             PA, 2, _DEF_INPUT, _DEF_LOW, _DEF_HIGH,  _DEF_HIGH},      //11    touch1 int
+        {             PC, 12, _DEF_INPUT,_DEF_LOW, _DEF_HIGH,  _DEF_HIGH},      //12    touch2 int
+
 
 
 #if 0
@@ -197,10 +200,20 @@ bool gpioPinRead(uint8_t ch)
   }
   else
   {
-    if(HAL_GPIO_ReadPin(gpio_tbl[ch].port) & (1 << gpio_tbl[ch].pin))
-     {
-       ret = true;
-     }
+    if(gpio_tbl[ch].on_state == _DEF_HIGH)
+    {
+      if(HAL_GPIO_ReadPin(gpio_tbl[ch].port) & (1 << gpio_tbl[ch].pin))
+      {
+        ret = true;
+      }
+    }
+    else
+    {
+      if(!(HAL_GPIO_ReadPin(gpio_tbl[ch].port) & (1 << gpio_tbl[ch].pin)))
+      {
+        ret = true;
+      }
+    }
   }
 
   return ret;

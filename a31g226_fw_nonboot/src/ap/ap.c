@@ -17,10 +17,51 @@ void apInit(void)
 void apMain(void)
 {
   uint32_t pre_time;
-  uint8_t touch_data[2];
+
+  //uint8_t data  = 0;
+  uint8_t count = 0;
+  //uint8_t bit_count = 0;
+
+  uint8_t step  = 0;
+
+  lcdClearBuffer();
 
   pre_time = millis();
 
+  while(1)
+  {
+    if(millis() - pre_time >= 500)
+    {
+      pre_time = millis();
+
+      if(step == 0)
+      {
+        if(count < 10)
+        {
+          lcd7SegDis(1, count);
+          lcd7SegDis(2, count);
+          lcd7SegDis(3, count);
+          lcd7SegDis(4, count);
+          count++;
+        }
+        else
+        {
+          count = 0;
+          step = 0;
+
+          lcdClearBuffer();
+        }
+      }
+
+    }
+
+   cliMain();
+  }
+
+
+
+
+#if 0
   while(1)
   {
     if(millis() - pre_time >= 1000)
@@ -36,16 +77,16 @@ void apMain(void)
 
       //touchGetTouchedData(touch_data);
 
-      //logPrintf("touch data[0] : 0x%x\r\n", touch_data[0]);
-      //logPrintf("touch data[1] : 0x%x\r\n", touch_data[1]);
+
+      //logPrintf("touch value : 0x%x\r\n", tbuttonGetValue());
     }
 
+    //tbuttonISR();
+#endif
 
 
 
 
-
-   cliMain();
 
 #if 0
     if(uartAvailable(_DEF_UART1) > 0)
@@ -127,5 +168,5 @@ void apMain(void)
 
 
 
-  }
+
 }

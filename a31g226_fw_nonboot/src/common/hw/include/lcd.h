@@ -27,6 +27,7 @@ void    lcdSetBackLight(uint8_t value);
 
 void lcdClearBuffer(void);
 void lcdAllDisp(void);
+void lcd7SegDis(uint8_t pos, uint8_t data);
 
 
 

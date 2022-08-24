@@ -83,7 +83,7 @@ void buzzerOn(uint16_t freq_hz, uint16_t time_ms)
   if (freq_hz == 0) return;
 
   pwm_top = 1000000/freq_hz;
-  HAL_TIMER1n_SetAData(TIMER12, pwm_top);                  //주파수
+  HAL_TIMER1n_SetAData(TIMER12, pwm_top);             //주파수
   //pwm_duty = HAL_TIMER1n_GetBData(TIMER12);         // 두티 high
   HAL_TIMER1n_SetBData(TIMER12,pwm_top/2);
 
