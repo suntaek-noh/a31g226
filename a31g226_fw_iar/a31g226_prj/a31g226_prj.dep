@@ -1,0 +1,1625 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <fileVersion>2</fileVersion>
+    <fileChecksum>651366009</fileChecksum>
+    <configuration>
+        <name>Debug</name>
+        <outputs>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_timer1n.o</file>
+            <file>$PROJ_DIR$\Debug\List\gpio.lst</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\List\system_A31G22x.lst</file>
+            <file>$PROJ_DIR$\Debug\List\A31G22x_hal_pwr.lst</file>
+            <file>$PROJ_DIR$\Debug\List\A31G22x_hal_i2c.lst</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_it.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\List\qblock.lst</file>
+            <file>$PROJ_DIR$\Debug\List\A31G22x_hal_dac.lst</file>
+            <file>$PROJ_DIR$\Debug\Obj\debug_frmwrk.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Exe\a31g226_prj.hex</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\List\A31G22x_it.lst</file>
+            <file>$PROJ_DIR$\Debug\Obj\cstartup_A31G22x.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_ts.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\system_A31G22x.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\buzzer.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\List\A31G22x_hal_wdt.lst</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_wt.__cstat.et</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdarg.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\qbuffer.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\List\cli.lst</file>
+            <file>$PROJ_DIR$\Debug\Obj\data_flash.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\cli.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_spi.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\cli.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\List\A31G22x_hal_timer2n.lst</file>
+            <file>$PROJ_DIR$\Debug\Obj\debug.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_SystemClock.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\debug_cmd.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\List\i2c_sw.lst</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_wt.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\buzzer.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_timer2n.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_dfmc.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\ap.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_lcd.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_pcu.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\pwm.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_it.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_dmac.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\qblock.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\data_flash.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_SystemClock.pbi</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_dmac.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_wdt.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\gt216l.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\debug_frmwrk.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_uartn.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_scu.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\debug.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_ts.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\List\A31G22x_hal_cmp.lst</file>
+            <file>$PROJ_DIR$\Debug\List\flash.lst</file>
+            <file>$PROJ_DIR$\Debug\Obj\i2c.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\qbuffer.pbi</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_i2c.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_cmp.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_timer1n.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\List\A31G22x_hal_uartn.lst</file>
+            <file>$PROJ_DIR$\Debug\List\A31G22x_hal_dmac.lst</file>
+            <file>$TOOLKIT_DIR$\inc\c\cmsis_iar.h</file>
+            <file>$PROJ_DIR$\Debug\List\A31G22x_hal_usart1n.lst</file>
+            <file>$PROJ_DIR$\Debug\List\A31G22x_hal_crc.lst</file>
+            <file>$PROJ_DIR$\Debug\Obj\debug_cmd.o</file>
+            <file>$PROJ_DIR$\Debug\List\main.lst</file>
+            <file>$PROJ_DIR$\Debug\List\data_flash.lst</file>
+            <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+            <file>$PROJ_DIR$\Debug\List\ap.lst</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdio.h</file>
+            <file>$PROJ_DIR$\Debug\List\A31G22x_hal_scu.lst</file>
+            <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_pwr.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_usart1n.o</file>
+            <file>$PROJ_DIR$\Debug\List\relay.lst</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_scu.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\system_A31G22x.pbi</file>
+            <file>$PROJ_DIR$\Debug\List\debug_frmwrk.lst</file>
+            <file>$PROJ_DIR$\Debug\List\A31G22x_hal_timer1n.lst</file>
+            <file>$PROJ_DIR$\Debug\List\A31G22x_hal_adc.lst</file>
+            <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_timer3n.o</file>
+            <file>$PROJ_DIR$\Debug\List\A31G22x_hal_dfmc.lst</file>
+            <file>$PROJ_DIR$\Debug\List\i2c.lst</file>
+            <file>$TOOLKIT_DIR$\inc\c\iccarm_builtin.h</file>
+            <file>$PROJ_DIR$\Debug\List\hw.lst</file>
+            <file>$PROJ_DIR$\Debug\List\A31G22x_hal_pcu.lst</file>
+            <file>$PROJ_DIR$\Debug\List\A31G22x_hal_wt.lst</file>
+            <file>$PROJ_DIR$\Debug\List\A31G22x_hal_spi.lst</file>
+            <file>$PROJ_DIR$\Debug\List\a31g226_prj.map</file>
+            <file>$PROJ_DIR$\Debug\List\pwm.lst</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_usart1n.pbi</file>
+            <file>$PROJ_DIR$\Debug\List\debug_cmd.lst</file>
+            <file>$PROJ_DIR$\Debug\Obj\flash.o</file>
+            <file>$PROJ_DIR$\Debug\List\lcd.lst</file>
+            <file>$PROJ_DIR$\Debug\List\A31G22x_hal_timer3n.lst</file>
+            <file>$PROJ_DIR$\Debug\List\uart.lst</file>
+            <file>$PROJ_DIR$\Debug\Obj\i2c.o</file>
+            <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdbool.h</file>
+            <file>$PROJ_DIR$\Debug\List\debug.lst</file>
+            <file>$PROJ_DIR$\Debug\List\tbutton.lst</file>
+            <file>$PROJ_DIR$\Debug\List\bsp.lst</file>
+            <file>$PROJ_DIR$\Debug\Exe\a31g226_prj.out</file>
+            <file>$PROJ_DIR$\Debug\Obj\debug_frmwrk.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\debug_cmd.pbi</file>
+            <file>$TOOLKIT_DIR$\lib\dl6M_tln.a</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\i2c_sw.o</file>
+            <file>$TOOLKIT_DIR$\lib\m6M_tl.a</file>
+            <file>$PROJ_DIR$\Debug\List\A31G22x_hal_cfmc.lst</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdlib.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product_stdlib.h</file>
+            <file>$PROJ_DIR$\Debug\List\ir_remote.lst</file>
+            <file>$TOOLKIT_DIR$\config\linker\ABOV\A31G226.icf</file>
+            <file>$PROJ_DIR$\Debug\List\log.lst</file>
+            <file>$PROJ_DIR$\Debug\Obj\a31g226_prj.pbd</file>
+            <file>$PROJ_DIR$\Debug\List\A31G22x_SystemClock.lst</file>
+            <file>$PROJ_DIR$\Debug\Obj\debug.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\relay.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_cfmc_SelfWriteErase.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_crc.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_i2c.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\i2c_sw.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_pwr.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_timer3n.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_usart1n.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_uartn.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\List\gt216l.lst</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_adc.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_spi.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_timer2n.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\hw.__cstat.et</file>
+            <file>$TOOLKIT_DIR$\lib\rt6M_tl.a</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_lcd.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\log.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_dac.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\tbutton.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\lcd.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\uart.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\List\buzzer.lst</file>
+            <file>$PROJ_DIR$\Debug\Obj\ir_remote.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_wdt.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_wdt.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_pcu.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_cfmc.__cstat.et</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product_string.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\string.h</file>
+            <file>$PROJ_DIR$\Debug\List\qbuffer.lst</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_wt.pbi</file>
+            <file>$PROJ_DIR$\common\core\qblock.c</file>
+            <file>$PROJ_DIR$\bsp\cmsis\Include\core_cmInstr.h</file>
+            <file>$PROJ_DIR$\bsp\A31G22x_libcfg.h</file>
+            <file>$PROJ_DIR$\bsp\bsp.c</file>
+            <file>$PROJ_DIR$\common\core\qblock.h</file>
+            <file>$PROJ_DIR$\bsp\bsp.h</file>
+            <file>$PROJ_DIR$\common\core\qbuffer.c</file>
+            <file>$PROJ_DIR$\common\hw\include\touch\gt216l.h</file>
+            <file>$PROJ_DIR$\common\hw\include\button.h</file>
+            <file>$PROJ_DIR$\common\hw\include\buzzer.h</file>
+            <file>$PROJ_DIR$\ap\ap_def.h</file>
+            <file>$PROJ_DIR$\bsp\startup\cstartup_A31G22x.s</file>
+            <file>$PROJ_DIR$\common\core\qbuffer.h</file>
+            <file>$PROJ_DIR$\bsp\cmsis\Include\core_cm0plus.h</file>
+            <file>$PROJ_DIR$\bsp\cmsis\Include\core_cmFunc.h</file>
+            <file>$PROJ_DIR$\bsp\A31G22x_it.h</file>
+            <file>$PROJ_DIR$\ap\ap.h</file>
+            <file>$PROJ_DIR$\ap\ap.c</file>
+            <file>$PROJ_DIR$\bsp\cmsis\device\system_A31G22x.c</file>
+            <file>$PROJ_DIR$\bsp\cmsis\device\system_A31G22x.h</file>
+            <file>$PROJ_DIR$\bsp\cmsis\device\Include\A31G22x.h</file>
+            <file>$PROJ_DIR$\bsp\A31G22x_it.c</file>
+            <file>$PROJ_DIR$\bsp\A31G22x_SystemClock.c</file>
+            <file>$PROJ_DIR$\common\hw\include\led.h</file>
+            <file>$PROJ_DIR$\hw\driver\gpio.c</file>
+            <file>$PROJ_DIR$\common\hw\include\flash.h</file>
+            <file>$PROJ_DIR$\hw\driver\i2c_sw.c</file>
+            <file>$PROJ_DIR$\hw\driver\ir_remote.c</file>
+            <file>$PROJ_DIR$\common\hw\include\uart.h</file>
+            <file>$PROJ_DIR$\common\hw\include\relay.h</file>
+            <file>$PROJ_DIR$\hw\driver\buzzer.c</file>
+            <file>$PROJ_DIR$\common\def.h</file>
+            <file>$PROJ_DIR$\common\hw\include\gpio.h</file>
+            <file>$PROJ_DIR$\hw\driver\touch\gt216l.c</file>
+            <file>$PROJ_DIR$\hw\driver\cli.c</file>
+            <file>$PROJ_DIR$\hw\driver\data_flash.c</file>
+            <file>$PROJ_DIR$\hw\driver\i2c.c</file>
+            <file>$PROJ_DIR$\hw\driver\lcd.c</file>
+            <file>$PROJ_DIR$\common\hw\include\tbutton.h</file>
+            <file>$PROJ_DIR$\common\hw\include\data_flash.h</file>
+            <file>$PROJ_DIR$\hw\driver\flash.c</file>
+            <file>$PROJ_DIR$\hw\driver\log.c</file>
+            <file>$PROJ_DIR$\common\hw\include\i2c_sw.h</file>
+            <file>$PROJ_DIR$\common\hw\include\ir_remote.h</file>
+            <file>$PROJ_DIR$\common\hw\include\lcd.h</file>
+            <file>$PROJ_DIR$\common\hw\include\log.h</file>
+            <file>$PROJ_DIR$\common\hw\include\pwm.h</file>
+            <file>$PROJ_DIR$\common\hw\include\cli.h</file>
+            <file>$PROJ_DIR$\common\hw\include\i2c.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\gt216l.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_pwr.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_timer3n.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\buzzer.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_dfmc.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_it.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\qbuffer.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\ir_remote.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_cfmc_SelfWriteErase.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\system_A31G22x.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_spi.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_dmac.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_SystemClock.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_timer2n.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\flash.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\bsp.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\relay.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_pcu.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_i2c.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\gpio.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_ts.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\lcd.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\qblock.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\ap.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_cfmc.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\cli.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\data_flash.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_dac.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\hw.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_scu.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\log.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\pwm.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\tbutton.o</file>
+            <file>$PROJ_DIR$\Debug\List\A31G22x_hal_lcd.lst</file>
+            <file>$PROJ_DIR$\Debug\Obj\qblock.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\ap.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\i2c.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\i2c_sw.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\log.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_dfmc.pbi</file>
+            <file>$PROJ_DIR$\Debug\List\A31G22x_hal_ts.lst</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_crc.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\lcd.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\pwm.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_adc.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\relay.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\flash.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_adc.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_cmp.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_crc.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_cfmc_SelfWriteErase.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\gt216l.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_cfmc.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_timer1n.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_lcd.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_dac.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\uart.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_cmp.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\ir_remote.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\hw.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\gpio.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\gpio.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\uart.pbi</file>
+            <file>$PROJ_DIR$\Debug\List\A31G22x_hal_cfmc_SelfWriteErase.lst</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Include\A31G22x_hal_crc.h</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Include\A31G22x_hal_ts.h</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Include\A31G22x_hal_wt.h</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Include\A31G22x_hal_cmp.h</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Include\a31G22x_hal_aa_types.h</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Include\A31G22x_hal_i2c.h</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Include\A31G22x_hal_assert.h</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Include\A31G22x_hal_cfmc.h</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Include\A31G22x_hal_adc.h</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Include\A31G22x_hal_pcu.h</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Include\A31G22x_hal_timer2n.h</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Include\A31G22x_hal_dfmc.h</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Include\A31G22x_hal_scu.h</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Include\A31G22x_hal_cfmc_SelfWriteErase.h</file>
+            <file>$PROJ_DIR$\hw\hw.c</file>
+            <file>$PROJ_DIR$\hw\driver\pwm.c</file>
+            <file>$PROJ_DIR$\hw\driver\relay.c</file>
+            <file>$PROJ_DIR$\hw\driver\uart.c</file>
+            <file>$PROJ_DIR$\hw\hw.h</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Include\A31G22x_hal_dac.h</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Include\A31G22x_hal_dmac.h</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Include\A31G22x_hal_timer3n.h</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Include\A31G22x_hal_pwr.h</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Include\A31G22x_hal_spi.h</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Include\A31G22x_hal_uartn.h</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Include\A31G22x_hal_usart1n.h</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Include\A31G22x_hal_wdt.h</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Include\A31G22x_hal_timer1n.h</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Include\A31G22x_hal_lcd.h</file>
+            <file>$PROJ_DIR$\hw\driver\tbutton.c</file>
+            <file>$PROJ_DIR$\hw\hw_def.h</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Source\A31G22x_hal_spi.c</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Source\A31G22x_hal_usart1n.c</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Source\A31G22x_hal_wt.c</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Source\debug_cmd.c</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Include\debug_cmd.h</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Include\debug_frmwrk.h</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Source\A31G22x_hal_timer1n.c</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Source\A31G22x_hal_wdt.c</file>
+            <file>$PROJ_DIR$\main.c</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Source\A31G22x_hal_adc.c</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Source\A31G22x_hal_timer3n.c</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Source\A31G22x_hal_ts.c</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Source\A31G22x_hal_timer2n.c</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Source\debug.c</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Source\A31G22x_hal_cfmc_SelfWriteErase.c</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Source\A31G22x_hal_uartn.c</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Source\A31G22x_hal_cmp.c</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Source\debug_frmwrk.c</file>
+            <file>$PROJ_DIR$\Debug\Obj\A31G22x_hal_uartn.pbi</file>
+            <file>$PROJ_DIR$\Debug\Obj\tbutton.pbi</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Source\A31G22x_hal_dac.c</file>
+            <file>$PROJ_DIR$\main.h</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Source\A31G22x_hal_crc.c</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Source\A31G22x_hal_cfmc.c</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Source\A31G22x_hal_pwr.c</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Source\A31G22x_hal_scu.c</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Source\A31G22x_hal_dfmc.c</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Source\A31G22x_hal_dmac.c</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Source\A31G22x_hal_i2c.c</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Source\A31G22x_hal_lcd.c</file>
+            <file>$PROJ_DIR$\lib\abov_hal\Source\A31G22x_hal_pcu.c</file>
+        </outputs>
+        <file>
+            <name>[ROOT_NODE]</name>
+            <outputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 109 95</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Debug\Exe\a31g226_prj.out</name>
+            <outputs>
+                <tool>
+                    <name>OBJCOPY</name>
+                    <file> 10</file>
+                </tool>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 95</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 120 249 257 255 253 246 260 209 45 60 36 37 76 80 24 0 33 87 14 50 77 46 31 210 217 228 220 208 230 13 231 53 68 49 99 224 205 264 103 114 263 247 243 48 248 227 211 250 214 237 261 104 139 115 112</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\common\core\qblock.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 239</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 7 227</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 41</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 160 187 73 85 71 79 59 86 75 44 105 153 152 117 118</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 71 187 105 75 73 153 79 85 152 118 44 19 117 59 86 160</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\bsp\bsp.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 2</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 108 220</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 52</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 161 187 73 85 71 79 59 86 75 44 105 153 152 117 118 158 273 278 176 169 157 65 90 170 175 281 276 275 171 299 293 294 282 296 279 297 280 274</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 117 171 75 152 65 280 86 175 273 176 278 276 44 85 71 157 299 187 294 279 19 59 118 90 73 158 281 275 293 282 296 297 274 105 153 79 169 170 161</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\common\core\qbuffer.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 20</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 154 211</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 58</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 168 187 73 85 71 79 59 86 75 44 105 153 152 117 118</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 153 71 152 73 79 85 105 75 118 187 44 19 117 59 86 168</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\bsp\startup\cstartup_A31G22x.s</name>
+            <outputs>
+                <tool>
+                    <name>AARM</name>
+                    <file> 13</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\ap\ap.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 240</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 72 228</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 35</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 172 166 287 299 161 187 73 85 71 79 59 86 75 44 105 153 152 117 118 158 273 278 176 169 157 65 90 170 175 281 276 275 171 293 294 282 296 279 297 280 274 179 184 201 164 181 165 203 202 188 199 200 195 204 198 185 194</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 276 188 59 179 200 279 19 85 75 118 176 181 204 187 294 71 65 90 299 201 203 185 278 171 280 44 117 86 152 175 157 273 166 287 184 164 165 202 199 195 198 194 161 158 281 275 293 282 296 297 274 73 105 153 79 169 170 172</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\bsp\cmsis\device\system_A31G22x.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 15</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 3 214</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 81</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 44 85 71 79 59 86 176 169 157 65 90 170 175</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 71 79 175 157 65 176 85 59 86 169 44 170 90</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\bsp\A31G22x_it.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 6</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 12 210</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 39</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 171 299 161 187 73 85 71 79 59 86 75 44 105 153 152 117 118 158 273 278 176 169 157 65 90 170 175 281 276 275 293 294 282 296 279 297 280 274</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 71 105 176 281 170 296 75 273 161 293 274 85 44 299 158 275 282 297 73 153 79 169 187 278 276 171 294 279 280 19 117 59 86 152 118 175 157 65 90</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\bsp\A31G22x_SystemClock.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 28</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 123 217</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 43</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 299 161 187 73 85 71 79 59 86 75 44 105 153 152 117 118 158 273 278 176 169 157 65 90 170 175 281 276 275 171 293 294 282 296 279 297 280 274</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 276 85 71 278 44 157 176 171 280 117 75 86 152 175 65 187 294 279 19 59 118 90 273 73 161 158 281 275 293 282 296 297 274 105 153 79 169 170 299</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\hw\driver\gpio.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 265</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 1 224</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 266</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 188 299 161 187 73 85 71 79 59 86 75 44 105 153 152 117 118 158 273 278 176 169 157 65 90 170 175 281 276 275 171 293 294 282 296 279 297 280 274 203</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 73 176 299 117 171 75 152 65 273 280 86 175 278 276 44 85 71 157 187 294 279 19 59 118 90 203 161 158 281 275 293 282 296 297 274 105 153 79 169 170 188</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\hw\driver\i2c_sw.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 129</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 30 114</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 242</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 198 299 161 187 73 85 71 79 59 86 75 44 105 153 152 117 118 158 273 278 176 169 157 65 90 170 175 281 276 275 171 293 294 282 296 279 297 280 274 204</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 171 175 86 280 117 75 152 299 176 278 276 44 85 71 157 273 204 187 294 279 19 59 118 65 90 161 158 281 275 293 282 296 297 274 73 105 153 79 169 170 198</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\hw\driver\ir_remote.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 147</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 119 263</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 212</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 199 299 161 187 73 85 71 79 59 86 75 44 105 153 152 117 118 158 273 278 176 169 157 65 90 170 175 281 276 275 171 293 294 282 296 279 297 280 274 203 160</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 152 65 75 171 117 280 86 175 299 278 276 44 85 71 157 73 273 160 187 294 279 19 59 118 176 90 203 161 158 281 275 293 282 296 297 274 105 153 79 169 170 199</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\hw\driver\buzzer.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 16</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 146 208</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 32</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 165 299 161 187 73 85 71 79 59 86 75 44 105 153 152 117 118 158 273 278 176 169 157 65 90 170 175 281 276 275 171 293 294 282 296 279 297 280 274 203</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 73 176 282 85 273 299 158 79 275 297 153 71 169 161 281 293 296 274 105 75 44 170 203 187 278 276 171 294 279 280 19 117 59 86 152 118 175 157 65 90 165</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\hw\driver\touch\gt216l.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 256</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 134 205</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 47</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 163 299 161 187 73 85 71 79 59 86 75 44 105 153 152 117 118 158 273 278 176 169 157 65 90 170 175 281 276 275 171 293 294 282 296 279 297 280 274 204 188</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 294 44 299 176 187 71 65 90 276 279 19 85 59 75 118 273 188 278 171 280 117 86 152 175 157 204 161 158 281 275 293 282 296 297 274 73 105 153 79 169 170 163</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\hw\driver\cli.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 25</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 21 230</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 23</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 203 299 161 187 73 85 71 79 59 86 75 44 105 153 152 117 118 158 273 278 176 169 157 65 90 170 175 281 276 275 171 293 294 282 296 279 297 280 274 184</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 90 282 79 65 73 158 85 275 297 153 71 273 169 44 176 299 161 281 293 296 274 105 75 184 187 278 276 171 294 279 280 19 117 59 86 152 118 175 157 203 170</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\hw\driver\data_flash.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 22</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 70 231</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 42</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 195 299 161 187 73 85 71 79 59 86 75 44 105 153 152 117 118 158 273 278 176 169 157 65 90 170 175 281 276 275 171 293 294 282 296 279 297 280 274 203</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 73 176 294 44 273 187 71 65 90 276 279 19 85 59 75 118 278 171 280 117 86 152 175 157 203 299 161 158 281 275 293 282 296 297 274 105 153 79 169 170 195</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\hw\driver\i2c.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 57</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 89 103</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 241</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 204 299 161 187 73 85 71 79 59 86 75 44 105 153 152 117 118 158 273 278 176 169 157 65 90 170 175 281 276 275 171 293 294 282 296 279 297 280 274 198 203</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 85 71 278 276 44 157 299 176 171 280 117 75 86 152 175 273 204 203 187 294 279 19 59 118 65 90 198 161 158 281 275 293 282 296 297 274 73 105 153 79 169 170</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\hw\driver\lcd.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 144</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 100 247</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 226</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 200 299 161 187 73 85 71 79 59 86 75 44 105 153 152 117 118 158 273 278 176 169 157 65 90 170 175 281 276 275 171 293 294 282 296 279 297 280 274 203 188 202</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 171 175 176 86 280 117 75 152 202 278 276 44 85 71 157 188 299 187 294 279 19 59 118 65 90 273 203 161 158 281 275 293 282 296 297 274 73 105 153 79 169 170 200</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\hw\driver\flash.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 251</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 56 99</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 219</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 181 299 161 187 73 85 71 79 59 86 75 44 105 153 152 117 118 158 273 278 176 169 157 65 90 170 175 281 276 275 171 293 294 282 296 279 297 280 274 203</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 73 176 282 85 273 158 79 275 297 153 71 169 299 161 281 293 296 274 105 75 44 170 203 187 278 276 171 294 279 280 19 117 59 86 152 118 175 157 65 90 181</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\hw\driver\log.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 141</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 121 243</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 235</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 201 299 161 187 73 85 71 79 59 86 75 44 105 153 152 117 118 158 273 278 176 169 157 65 90 170 175 281 276 275 171 293 294 282 296 279 297 280 274 184</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 297 169 275 153 71 273 158 282 73 79 85 176 161 281 293 296 274 105 75 44 170 184 299 187 278 276 171 294 279 280 19 117 59 86 152 118 175 157 65 90 201</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\hw\hw.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 138</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 91 264</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 233</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 287 299 161 187 73 85 71 79 59 86 75 44 105 153 152 117 118 158 273 278 176 169 157 65 90 170 175 281 276 275 171 293 294 282 296 279 297 280 274 179 184 201 164 181 165 203 202 188 199 200 195 204 198 185 194</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 275 169 199 184 297 153 71 273 165 198 158 282 73 79 85 176 299 164 202 195 194 161 281 293 296 274 105 75 44 170 19 179 201 181 203 188 200 204 185 187 278 276 171 294 279 280 117 59 86 152 118 175 157 65 90 287</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\hw\driver\pwm.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 38</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 96 248</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 236</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 202 299 161 187 73 85 71 79 59 86 75 44 105 153 152 117 118 158 273 278 176 169 157 65 90 170 175 281 276 275 171 293 294 282 296 279 297 280 274 203</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 73 176 279 59 273 276 19 85 75 118 299 187 294 71 65 90 44 278 171 280 117 86 152 175 157 203 161 158 281 275 293 282 296 297 274 105 153 79 169 170 202</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\hw\driver\relay.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 125</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 78 250</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 221</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 185 299 161 187 73 85 71 79 59 86 75 44 105 153 152 117 118 158 273 278 176 169 157 65 90 170 175 281 276 275 171 293 294 282 296 279 297 280 274</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 276 85 71 278 44 157 176 171 280 117 75 86 152 175 65 299 187 294 279 19 59 118 90 273 73 161 158 281 275 293 282 296 297 274 105 153 79 169 170 185</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\hw\driver\uart.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 145</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 102 261</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 267</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 184 299 161 187 73 85 71 79 59 86 75 44 105 153 152 117 118 158 273 278 176 169 157 65 90 170 175 281 276 275 171 293 294 282 296 279 297 280 274 168</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 279 59 276 19 85 75 118 176 273 299 187 294 71 65 90 44 278 171 280 117 86 152 175 157 168 161 158 281 275 293 282 296 297 274 73 105 153 79 169 170 184</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\hw\driver\tbutton.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 143</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 107 237</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 319</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 194 299 161 187 73 85 71 79 59 86 75 44 105 153 152 117 118 158 273 278 176 169 157 65 90 170 175 281 276 275 171 293 294 282 296 279 297 280 274 163 188 203</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 85 278 157 44 276 71 171 280 117 75 86 152 175 65 176 188 299 187 294 279 19 59 118 90 273 73 163 203 161 158 281 275 293 282 296 297 274 105 153 79 169 170 194</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\lib\abov_hal\Source\A31G22x_hal_spi.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 136</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 94 24</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 215</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 158 273 281 176 169 44 85 71 79 59 86 157 65 90 170 175 292 278</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\lib\abov_hal\Source\A31G22x_hal_usart1n.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 132</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 66 77</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 97</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 294 73 85 71 79 59 86 75 176 169 44 157 65 90 170 175 273 281</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\lib\abov_hal\Source\A31G22x_hal_wt.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 18</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 93 31</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 155</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 158 273 281 176 169 44 85 71 79 59 86 157 65 90 170 175 271</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\lib\abov_hal\Source\debug_cmd.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 29</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 98 68</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 111</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 44 85 71 79 59 86 304 305 293 73 75 176 169 157 65 90 170 175 273 294</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\lib\abov_hal\Source\A31G22x_hal_timer1n.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 62</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 83 0</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 258</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 158 273 281 176 169 44 85 71 79 59 86 157 65 90 170 175 296</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\lib\abov_hal\Source\A31G22x_hal_wdt.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 148</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 17 46</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 149</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 158 273 295 176 169 44 85 71 79 59 86 157 65 90 170 175</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\main.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 11</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 69 48</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 113</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 321 172 166 287 299 161 187 73 85 71 79 59 86 75 44 105 153 152 117 118 158 273 278 176 169 157 65 90 170 175 281 276 275 171 293 294 282 296 279 297 280 274 179 184 201 164 181 165 203 202 188 199 200 195 204 198 185 194</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\lib\abov_hal\Source\A31G22x_hal_adc.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 135</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 84 249</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 252</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 158 273 281 176 169 44 85 71 79 59 86 157 65 90 170 175 278 277</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 277 176 273 281 175 59 65 90 44 278 169 157 85 86 158 170 71 79</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\lib\abov_hal\Source\A31G22x_hal_timer3n.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 131</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 101 87</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 207</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 158 273 281 176 169 44 85 71 79 59 86 157 65 90 170 175 290</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\lib\abov_hal\Source\A31G22x_hal_ts.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 54</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 245 14</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 225</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 158 273 281 176 169 44 85 71 79 59 86 157 65 90 170 175 270</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\lib\abov_hal\Source\A31G22x_hal_timer2n.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 137</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 26 33</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 218</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 158 273 281 176 169 44 85 71 79 59 86 157 65 90 170 175 279</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\lib\abov_hal\Source\debug.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 27</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 106 53</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 124</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 44 85 71 79 59 86 305 293 73 75 176 169 157 65 90 170 175 273 294</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\lib\abov_hal\Source\A31G22x_hal_cfmc_SelfWriteErase.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 126</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 268 255</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 213</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 158 273 282 176 169 44 85 71 79 59 86 157 65 90 170 175</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 157 273 169 59 65 71 282 85 86 176 175 44 170 79 90 158</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\lib\abov_hal\Source\A31G22x_hal_uartn.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 133</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 63 50</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 318</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 293 73 85 71 79 59 86 75 176 169 44 157 65 90 170 175 273 281</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\lib\abov_hal\Source\A31G22x_hal_cmp.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 61</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 55 253</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 262</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 158 273 272 176 169 44 85 71 79 59 86 157 65 90 170 175 281</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 169 272 176 79 281 273 175 44 170 71 158 157 85 59 86 65 90</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\lib\abov_hal\Source\debug_frmwrk.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 9</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 82 49</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 110</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 305 293 73 85 71 79 59 86 75 176 169 44 157 65 90 170 175 273 294 278 117 118 153 152</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\lib\abov_hal\Source\A31G22x_hal_dac.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 142</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 8 260</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 232</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 158 273 281 176 169 44 85 71 79 59 86 157 65 90 170 175 288</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\lib\abov_hal\Source\A31G22x_hal_crc.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 127</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 67 246</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 254</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 158 273 281 176 169 44 85 71 79 59 86 157 65 90 170 175 269</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 79 175 281 176 269 273 169 44 170 71 158 157 85 59 86 65 90</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\lib\abov_hal\Source\A31G22x_hal_cfmc.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 151</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 116 257</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 229</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 158 273 276 176 169 44 85 71 79 59 86 157 65 90 170 175</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 169 86 157 276 176 85 65 273 175 59 90 44 158 170 71 79</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\lib\abov_hal\Source\A31G22x_hal_pwr.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 130</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 4 76</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 206</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 158 273 281 176 169 44 85 71 79 59 86 157 65 90 170 175 291</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\lib\abov_hal\Source\A31G22x_hal_scu.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 51</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 74 80</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 234</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 281 176 169 44 85 71 79 59 86 157 65 90 170 175 273 278 276</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\lib\abov_hal\Source\A31G22x_hal_dfmc.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 34</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 88 209</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 244</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 158 273 280 176 169 44 85 71 79 59 86 157 65 90 170 175</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\lib\abov_hal\Source\A31G22x_hal_dmac.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 40</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 64 45</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 216</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 158 273 281 176 169 44 85 71 79 59 86 157 65 90 170 175 289</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\lib\abov_hal\Source\A31G22x_hal_i2c.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 128</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 5 60</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 223</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 158 273 281 176 169 44 85 71 79 59 86 157 65 90 170 175 274</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\lib\abov_hal\Source\A31G22x_hal_lcd.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 140</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 238 36</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 259</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 158 273 281 176 169 44 85 71 79 59 86 157 65 90 170 175 297 278</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\lib\abov_hal\Source\A31G22x_hal_pcu.c</name>
+            <outputs>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 150</file>
+                </tool>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 92 37</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 222</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 158 273 278 176 169 44 85 71 79 59 86 157 65 90 170 175</file>
+                </tool>
+            </inputs>
+        </file>
+    </configuration>
+    <configuration>
+        <name>Release</name>
+        <outputs />
+        <forcedrebuild>
+            <name>[MULTI_TOOL]</name>
+            <tool>ILINK</tool>
+        </forcedrebuild>
+    </configuration>
+</project>

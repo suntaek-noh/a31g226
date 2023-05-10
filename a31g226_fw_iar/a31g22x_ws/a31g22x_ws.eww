@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspace>
+    <project>
+        <path>$WS_DIR$\..\a31g224_prj\a31g224_prj.ewp</path>
+    </project>
+    <project>
+        <path>$WS_DIR$\..\a31g226_prj\a31g226_prj.ewp</path>
+    </project>
+    <batchBuild />
+</workspace>
